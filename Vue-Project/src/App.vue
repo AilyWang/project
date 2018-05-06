@@ -15,8 +15,10 @@ export default {
   *{
     margin:0;
     padding:0;
+    text-decoration: none;
+    list-style:none;
   }
-  html,body{
+  html,body,#app{
     height:100%;
   }
 #app {

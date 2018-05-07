@@ -130,20 +130,142 @@
                 </li>
             </ul>
         </div>
+      <div class="aside_panel_setting">
+        <div class="panle_setting_cont">
+          <div class="panel_setting_label">
+            <i class="iconfont icon-zhaopian setting_label"></i>
+          </div>
+          <div class="panel_setting_text">图形报表</div>
+          <div class="panel_setting_dropdown">
+            <a href="javascript:;" class="setting_dp"></a>
+          </div>
+        </div>
+        <ul class="panel_list">
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
+              <span class="panel_cf">折线图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
+              <span class="panel_cf">柱状图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
+              <span class="panel_cf">饼饼图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
+              <span class="panel_cf">雷达图</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="aside_panel_setting">
+        <div class="panle_setting_cont">
+          <div class="panel_setting_label">
+            <i class="iconfont icon-vine setting_label"></i>
+          </div>
+          <div class="panel_setting_text">扩展组件</div>
+          <div class="panel_setting_dropdown">
+            <a href="javascript:;" class="setting_dp"></a>
+          </div>
+        </div>
+        <ul class="panel_list">
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">时间轴</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">柱状图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">饼饼图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">雷达图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">折线图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">柱状图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">饼饼图</span>
+            </a>
+          </li>
+          <li class="panel_list_li">
+            <a href="javascript:;" class="panel_base_config">
+              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
+              <span class="panel_cf">雷达图</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 </template>
 
 <script>
     export default{
 
+        mounted(){
+            this.show();
+        },
+        methods: {
+            show(){
+                $('.panel_setting_text').click(function(e){
+                    e.stopPropagation();
+                    $(this).parent().siblings().toggle("fast");
+                    $(this).parent().find('.panel_setting_dropdown').toggleClass("panel_setting_dropdown_active");
+                })
+//                $(".aside_panel_setting").click(function(e){
+//                    e.stopPropagation();
+//                    console.log(1);
+//                    $(this).children().eq(0).children().eq(2).toggleClass('panel_setting_dropdown_active')
+//                    $(this).children().eq(1).toggle('fast');
+//                })
+            }
+        }
     }
 </script>
 
 <style scoped>
+  @media screen and (max-width:640px){
+        .aside{
+            display: none;
+        }
+    }
 .aside{
     width: 225px;
     margin-right: 5px;
     overflow: hidden;
+    height: auto;
     background: #222d32;
     color: #fff;
     font-size: 12px;
@@ -181,18 +303,27 @@
 .panel_setting_dropdown{
     width: 16px;
     height: 16px;
-    background: url(../../assets/images/accordion_arrows2.png) no-repeat -16px 0;
     position: absolute;
     right: 5px;
     margin-top: -8px;
     top: 50%;
 }
+.panel_setting_dropdown{
+    background: url(../../assets/images/accordion_arrows2.png) no-repeat -16px 0;
+}
+.panel_setting_dropdown_active{
+    background: url(../../assets/images/accordion_arrows2.png) no-repeat 0 0;
+}
 .panel_list{
     width: 225px;
     background: #2c3b41;
+    display: none;
 }
 .panel_list_li{
     width: 100%;
+}
+.panel_list_li:hover{
+    background: #1e282c;
 }
 .panel_base_config{
     display: block;

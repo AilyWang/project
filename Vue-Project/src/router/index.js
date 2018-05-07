@@ -1,17 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import index from '@/pages/index'
-
-
+import Index from '@/pages/index'
+import TimerShaft from '@/components/yuyu/timerShaft'
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'index',
-      component: index
+      component: Index
+    },
+    {
+      path: '/s',
+      name: 'TimerShaft',
+      component: TimerShaft
     }
   ]
 });

@@ -1,9 +1,9 @@
 <template>
   <section class="test_section">
   	<nav class='test_section_nav'>
-      <!-- <a href="#" class="click_previous">
+       <a href="#" class="click_previous">
             <i class="icon iconfont icon-previous"></i>
-      </a> -->
+      </a>
 
       <div class='left_nav'>
   		<ul >
@@ -60,9 +60,9 @@
                 <i class="icon iconfont icon-eye"></i>
   			</a>
   		</div>
-     <!--   <a href="#" class="click_next">
+        <a href="#" class="click_next">
             <i class="icon iconfont icon-next"></i>
-      </a> -->
+      </a>
   	</nav>
   	<section class="test_section_content">
   	</section>
@@ -133,11 +133,10 @@
     flex:1;
     display:flex;
     background: #eee;
-    flex-direction:column;
+   overflow: hidden;
+   flex-direction:column;
     .test_section_nav{
-      overflow: hidden;
       font-size:12px;
-        background:#eee;
         background:rgb(243,243,243);
         display:flex;
         align-items: center;
@@ -148,6 +147,7 @@
           flex:1;
         overflow: hidden;
         ul{
+            width:3700px;
             display:flex;
             li{
                margin-right:3px;
@@ -176,12 +176,13 @@
           height:36px;
           display:flex;
           align-items:center;
-          /*background:#eef;*/
+          /*!*background:#eef;*!*/
           border-left:1px solid #ddd;
           a{
             flex:1;
             padding:4px 0;
-            color:purple;
+            color:buleviolet;
+            color:#f06;
           }
       }
     }

@@ -1,5 +1,6 @@
 <template>
     <div class="header">
+        <!-- 社区服务 -->
         <div class="header_l">
             <table>
                 <tbody>
@@ -53,6 +54,8 @@
                 </tbody>
             </table>
         </div>
+        <!-- 社区服务END -->
+        <!-- 用户设置 -->
         <div class="header_r">
             <a href="javascript:;" class="l_btn_text">
                 <span><i class="iconfont icon-user hd_set"></i></span>
@@ -83,16 +86,24 @@
                 </div>
             </a>
             <span class="header_coll"></span>
-            <a href="javascript:;" class="l_btn_text l_user_set">
+            <a href="javascript:;" class="l_btn_text l_user_set theme_hov">
                 <span><i class="iconfont icon-tree hd_set"></i></span>
                 <span>主题</span>
                 <span class="header_dropdown"></span>
+                <!-- 主题选项 -->
                 <span class="header_theme_options">
+                    <span class="theme_options_l"></span>
+                    <span class="theme_options_r">
+                        <head-color :icon-color="x.color" v-for="(x, index) in msg" :key="index">
+                            {{x.cont}}
+                        </head-color>
+                    </span>
                     <!-- 这是主题的垂直滑动条 -->
                     <span class="theme_croll">
                         <span class="theme_croll_cont"></span>
                     </span>
                 </span>
+                <!-- 主题选项END -->
             </a>
             <span class="header_coll"></span>
             <a href="javascript:;" class="l_btn_text">
@@ -101,12 +112,76 @@
                 <span class="header_dropdown"></span>
             </a>
         </div>
+        <!-- 用户设置END -->
     </div>
 </template>
 
 <script>
+import HeadColor from '../public/headerColor'
     export default{
-        name: "CommonHeader"
+        name: "CommonHeader",
+        data(){
+            return {
+                msg:[
+                    {
+                        "color": "#3c8dbc",
+                        "cont": "默认主题"
+                    },
+                    {
+                        "color": "#444",
+                        "cont": "黑色主题"
+                    },
+                    {
+                        "color": "#444",
+                        "cont": "黑色主题-亮"
+                    },
+                    {
+                        "color": "#dd4b39",
+                        "cont": "红色主题"
+                    },
+                    {
+                        "color": "#dd4b39",
+                        "cont": "红色主题-亮"
+                    },
+                    {
+                        "color": "#00a65a",
+                        "cont": "绿色主题"
+                    },
+                    {
+                        "color": "#00a65a",
+                        "cont": "绿色主题-亮"
+                    },
+                    {
+                        "color": "#605ca8",
+                        "cont": "紫色主题"
+                    },
+                    {
+                        "color": "#605ca8",
+                        "cont": "紫色主题-亮"
+                    },
+                    {
+                        "color": "#3c8dbc",
+                        "cont": "蓝色主题"
+                    },
+                    {
+                        "color": "#3c8dbc",
+                        "cont": "蓝色主题-亮"
+                    },
+                    {
+                        "color": "#f39c12",
+                        "cont": "橙色主题"
+                    },
+                    {
+                        "color": "#f39c12",
+                        "cont": "橙色主题-亮"
+                    }
+                ]
+            }
+        },
+        components:{
+                HeadColor
+        }
+       
     }
 </script>
 
@@ -119,12 +194,14 @@
         text-align: center;
         font-size: 13px;
     }
-    @media screen and (max-width:1280px){
-        .header{
-            overflow: hidden;
+    @media screen and (max-width:1048px){
+        .header_r{
+            /*overflow: hidden;*/
+            display: none;
         }
     }
  
+    /* ------ 网站资源 --------- */
     .header .l_btn_text{
         display: inline-block;
         color: #fff;
@@ -161,6 +238,9 @@
         margin: 0 5px;
         height: 40px;
     }
+
+
+    /* ---------- 用户操作 ---------- */
     .header_r{
         float: right;
         padding-right: 10px;
@@ -182,7 +262,7 @@
         margin-bottom: -3px;
     }
     .header_r .l_btn_text:hover{
-        background: rgba(255, 255, 255, .4)
+        background: rgba(255, 255, 255, .8)
     }
     .header_coll{
         display: inline-block;
@@ -225,7 +305,13 @@
         box-shadow: 2px 2px 5px #ccc;
         position: absolute;
         left: 0;
+        top: 100%;
+        font-size: 12px;
     }
+    .l_user_set:hover .header_set_options{
+        display: block;
+    }
+    /* ----------设置选项 --------------- */
     .setting_l{
         width: 25%;
         height: 100%;
@@ -282,4 +368,41 @@
     .icon-icinfocircle,.icon-key{
         font-size: 16px;
     }
+    .theme_hov:hover .header_theme_options{
+        display: block;
+    }
+
+
+
+    /* ----  ----  主题样式  ----  ----- */
+    
+    .header_theme_options{
+        display: inline-block;
+        display: none;
+        position: absolute;
+        left: -35px;
+        top: 100%;
+        width: 180px;
+        background: #f3f3f3;
+        box-shadow: 2px 2px 2px #ccc;
+        padding: 3px 0;
+        font-size: 0;
+        border: 1px solid #ccc;
+    }
+    .theme_options_l,.theme_options_r,.theme_croll,.theme_options_r_cont{
+        display: inline-block;
+        font-size: 12px;
+    }
+    .theme_options_l{
+        width: 25px;
+        height: 100%;
+        border-right: 1px solid #ccc;
+    }
+    .theme_options_r{
+        width: 145px;
+        height: 100%;
+        border-left: 1px solid #fff;
+        vertical-align: top;
+    }
+   
 </style>

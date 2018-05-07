@@ -1,103 +1,47 @@
 <template>
   <section class="test_section">
   	<nav class='test_section_nav'>
-      <a href="#" class="click_previous">
+      <!-- <a href="#" class="click_previous">
             <i class="icon iconfont icon-previous"></i>
-      </a>
-     
+      </a> -->
+
       <div class='left_nav'>
   		<ul >
-  			<li>
-  				<a>
-            <i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-            <i class="icon iconfont icon-home"></i>
-  					系统首页
-            <i class="icon iconfont icon-close"></i>
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li><li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
-  			<li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li><li>
-  				<a>
-                	<i class="icon iconfont icon-home"></i>
-  					系统首页
-  				</a>
-  			</li>
   		  <li>
           <a>
-                  <i class="icon iconfont icon-home"></i>
+            <i class="icon iconfont icon-home"></i>
             系统首页
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="icon iconfont icon-home"></i>
+            系统首页
+            <i class="icon iconfont icon-close"></i>
           </a>
         </li> <li>
           <a>
-                  <i class="icon iconfont icon-home"></i>
+            <i class="icon iconfont icon-home"></i>
             系统首页
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="icon iconfont icon-home"></i>
+            系统首页
+            <i class="icon iconfont icon-close"></i>
           </a>
         </li> <li>
           <a>
-                  <i class="icon iconfont icon-home"></i>
+            <i class="icon iconfont icon-home"></i>
             系统首页
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="icon iconfont icon-home"></i>
+            系统首页
+            <i class="icon iconfont icon-close"></i>
           </a>
         </li>
   		</ul>
@@ -112,13 +56,13 @@
   			<a href='#'>
                 <i class="icon iconfont icon-close"></i>
   			</a>
-  			<a href='#' class="win-fullscreen" @click='test()'>
+  			<a href='#'  class="win-fullscreen" @click='changeView()'>
                 <i class="icon iconfont icon-eye"></i>
   			</a>
   		</div>
-       <a href="#" class="click_next">
+     <!--   <a href="#" class="click_next">
             <i class="icon iconfont icon-next"></i>
-      </a>
+      </a> -->
   	</nav>
   	<section class="test_section_content">
   	</section>
@@ -129,7 +73,7 @@
       name: 'testSection',
       data(){
         return{
-          isFull:false
+          isFull:true
         }
       },
       methods:{
@@ -141,13 +85,13 @@
                 window.location.reload();
             });
         },
-  	    test(){
-  	    	 if(!this.isFull){
+  	    changeView(){
+  	    	 if(this.isFull){
               this.exitFull()
-              this.isFull = true;
+              this.isFull = false;
            }else{
               this.requestFullScreen(document.documentElement)
-              this.isFull = false;
+              this.isFull = true;
            }
   	    },
     	// 进入全屏
@@ -181,73 +125,69 @@
 	        }
     	}
     },
-   
+
   }
 </script>
-<style lang='scss'>
+<style lang='scss' scoped=''>
  .test_section{
-  padding-top:37px;
-  display:flex;
-  background: #eee;
-  flex-direction:column;
-  .test_section_nav{
-     .click_next,.click_previous{
-      display:none;
-      line-height:34px;
-
-    }
-  	font-size:14px;
-  	background:#eee;
-  	border-bottom:1px solid #ddd;
-  	background:rgb(243,243,243);
-  	display:flex;
-	align-items: center;
-	.left_nav{
     flex:1;
-  	  overflow:hidden;
-      ul{
-        width:3700px;
-      display:flex;
-         li{
-          margin-right:3px;
-          a{
-            display:block;
-            line-height:34px;
-            padding:0 5px;
-            border:1px solid #ddd;
-            border-bottom:none;
-            border-radius:6px 6px 0 0;
-            .icon-close{
-              font-size:10px;
-              color: #575757;
+    display:flex;
+    background: #eee;
+    flex-direction:column;
+    .test_section_nav{
+      overflow: hidden;
+      font-size:12px;
+        background:#eee;
+        background:rgb(243,243,243);
+        display:flex;
+        align-items: center;
+        i{
+          font-size: 14px;
+        }
+      .left_nav{
+          flex:1;
+        overflow: hidden;
+        ul{
+            display:flex;
+            li{
+               margin-right:3px;
+              a{
+                display:block;
+                line-height:34px;
+                padding:0 5px;
+                border:1px solid #ddd;
+                border-bottom:none;
+                border-radius:6px 6px 0 0;
+                .icon-close{
+                  font-size:10px;
+                  color: #575757;
+                }
+              }
             }
           }
-        }
+
       }
-  	 
-	}
-   a:hover{
-        background:#eda;
-        color:#01f;
+       a:hover{
+            background:#fff;
+            color:#000;
+       }
+      .right_btn{
+          width:100px;
+          height:36px;
+          display:flex;
+          align-items:center;
+          /*background:#eef;*/
+          border-left:1px solid #ddd;
+          a{
+            flex:1;
+            padding:4px 0;
+            color:purple;
+          }
       }
-	.right_btn{
-	  width:100px;
-	  display:flex;
-	  align-items:center;
-	  padding:0 1px;
-  	  background:#eef;
-  	  border-left:1px solid #ddd;
-  	  a{
-  	  	flex:1;
-  	  	padding:4px 0;
-  	  	color:purple;
-  	  }
-  	 
-	}
-  }
-  .test_section_content{
-  	overflow:hidden;
-  	flex:1;
-  }
+    }
+    .test_section_content{
+      overflow:hidden;
+      flex:1;
+    }
 }
 </style>

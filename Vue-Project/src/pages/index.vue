@@ -1,11 +1,11 @@
 <template>
-    <test-section></test-section>
+	   <publick-page></publick-page>
 </template>
 <script>
-    import testSection from '../components/yuyu/testSection'
+    import publickPage from './publicpage/publickPage'
     export default {
       components:{
-        testSection
+      	publickPage
       }
     }
 </script>

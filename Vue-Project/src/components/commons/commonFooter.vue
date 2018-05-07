@@ -30,6 +30,7 @@
     color: #000;
     font-size: 12px;
     padding: 7px 5px;
+    z-index: 12;
 }
 .foot_flex{
     display: flex;

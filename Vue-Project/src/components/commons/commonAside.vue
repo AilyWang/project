@@ -135,7 +135,24 @@
 
 <script>
     export default{
-        
+        mounted(){
+            this.show();
+        },
+        methods: {
+            show(){
+                $('.panel_setting_text').click(function(e){
+                    e.stopPropagation();
+                    $(this).parent().siblings().toggle("fast");
+                    $(this).parent().find('.panel_setting_dropdown').toggleClass("panel_setting_dropdown_active");
+                })
+                // $(".aside_panel_setting").click(function(e){
+                //     e.stopPropagation();
+                //     console.log(1);
+                //     $(this).children().eq(0).children().eq(2).toggleClass('panel_setting_dropdown_active')
+                //     $(this).children().eq(1).toggle('fast');
+                // })
+            }
+        }
     }
 </script>
 
@@ -143,8 +160,8 @@
 .aside{
     width: 225px;
     height: auto;
-    height: 500px;
-    min-height: 500px;
+    height: 700px;
+    min-height: 700px;
     background: #222d32;
     position: absolute;
     left: 0;
@@ -185,18 +202,27 @@
 .panel_setting_dropdown{
     width: 16px;
     height: 16px;
-    background: url(../../assets/images/accordion_arrows2.png) no-repeat -16px 0;
     position: absolute;
     right: 5px;
     margin-top: -8px;
     top: 50%;
 }
+.panel_setting_dropdown{
+    background: url(../../assets/images/accordion_arrows2.png) no-repeat -16px 0;
+}
+.panel_setting_dropdown_active{
+    background: url(../../assets/images/accordion_arrows2.png) no-repeat 0 0;
+}
 .panel_list{
     width: 225px;
     background: #2c3b41;
+    display: none;
 }
 .panel_list_li{
     width: 100%;
+}
+.panel_list_li:hover{
+    background: #1e282c;
 }
 .panel_base_config{
     display: block;

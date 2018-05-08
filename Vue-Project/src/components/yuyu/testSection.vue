@@ -1,50 +1,24 @@
 <template>
   <section class="test_section">
   	<nav class='test_section_nav'>
-       <a href="#" class="click_previous">
+      <a href="#" class="click_previous">
             <i class="icon iconfont icon-previous"></i>
       </a>
-
       <div class='left_nav'>
-  		<ul >
-  		  <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-          </a>
-        </li>
-        <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-            <i class="icon iconfont icon-close"></i>
-          </a>
-        </li> <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-          </a>
-        </li>
-        <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-            <i class="icon iconfont icon-close"></i>
-          </a>
-        </li> <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-          </a>
-        </li>
-        <li>
-          <a>
-            <i class="icon iconfont icon-home"></i>
-            系统首页
-            <i class="icon iconfont icon-close"></i>
-          </a>
-        </li>
-  		</ul>
+    		<ul >
+          <li v-for="(tab,index) in tabsName">
+
+              <a href="#" v-if='index === 0'  @click="tabsSwitch(index)" v-bind:class="{active:tab.isActive}">
+                <i class="icon iconfont icon-home"></i>
+              {{tab.name}}</a> 
+               <a href="#" v-else-if='index !== 0'  @click="tabsSwitch(index)" v-bind:class="{active:tab.isActive}">
+                <i class="icon iconfont icon-home"></i>
+              {{tab.name}} 
+              <i class="icon iconfont icon-close"></i>
+              </a>
+          </li>
+    		
+    		</ul>
       </div>
   		<div class='right_btn'>
   			<a href='#'>
@@ -65,6 +39,10 @@
       </a>
   	</nav>
   	<section class="test_section_content">
+       <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+       <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+       <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
   	</section>
   </section>
 </template>
@@ -73,10 +51,39 @@
       name: 'testSection',
       data(){
         return{
-          isFull:true
+          isFull:true,
+           tabsName: [{  
+                    name: "HTML",  
+                    isActive: true  
+                }, {  
+                    name: "CSS",  
+                    isActive: false  
+                }, {  
+                    name: "Vue",  
+                    isActive: false  
+                },{  
+                    name: "Angular",  
+                    isActive: false  
+                }],  
+                active: false  
         }
       },
       methods:{
+        tabsSwitch(tabIndex) {  
+  
+                    var tabCardCollection = document.querySelectorAll(".tab-card"),  
+                        len = tabCardCollection.length;  
+  
+                    for(var i = 0; i < len; i++) {  
+                        tabCardCollection[i].style.display = "none";  
+                        this.tabsName[i].isActive = false;  
+                    }  
+                    this.tabsName[tabIndex].isActive = true;  
+                    tabCardCollection[tabIndex].style.display = "block";  
+                }  ,
+        nowClick(){
+          console.log(this)
+        },
         changeData(){
             $.get("Reboot.run", function (result) {
                 console.log(result);
@@ -163,6 +170,12 @@
                   color: #575757;
                 }
               }
+              .active{
+                background:rgba(255,0,0,.2);
+                .icon-close{
+                  color:#f06;
+                }
+              }
             }
           }
 
@@ -189,6 +202,10 @@
     .test_section_content{
       overflow:hidden;
       flex:1;
+      div{
+        height:100%;
+        display:none;
+      }
     }
 }
 </style>

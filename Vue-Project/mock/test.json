@@ -1,22 +1,657 @@
-{
-	"expand":[
-		{
-			"left_ico":"iconfont icon-vine setting_label",
-			"tit":"扩展组件",
-			"timer":[
+{	
+	"aside":[
+
+		[
+			[
+				{
+					"left_ico":"iconfont icon-shezhi setting_label",
+					"tit":"系统设置",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-cube",
+							"tit":"基础配置"
+						},
+						{
+							"left_ico":"iconfont icon-lifering",
+							"tit":"资源管理"
+						},
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"分级字典"
+						},
+						{
+							"left_ico":"iconfont icon-file",
+							"tit":"数据字典"
+						},
+						{
+							"left_ico":"iconfont icon-link",
+							"tit":"常用链接"
+						},
+						{
+							"left_ico":"iconfont icon-refresh1",
+							"tit":"初始缓存"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-user setting_label",
+					"tit":"用户管理",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-sitemap",
+							"tit":"组织机构"
+						},
+						{
+							"left_ico":"iconfont icon-user",
+							"tit":"用户信息"
+						},
+						{
+							"left_ico":"iconfont icon-user-o",
+							"tit":"角色授权"
+						},
+						{
+							"left_ico":"iconfont icon-group",
+							"tit":"会员管理"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-code setting_label",
+					"tit":"代码生成",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-book",
+							"tit":"生成代码"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-desktop setting_label",
+					"tit":"系统监控",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"操作日志"
+						},
+						{
+							"left_ico":"iconfont icon-listul",
+							"tit":"异常日志"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-zhaopian setting_label",
+					"tit":"图形报表",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"折线图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"柱状图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"饼饼图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"雷达图"
+						}
+					]
+				}
+			],
+			[
 				{
 					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"时间轴"
-				},
-				{
-					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"扩组件"
-				},
-				{
-					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"时光机"
+					"tit":"扩展组件",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时间轴"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"扩组件"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时光机"
+						}
+					]
 				}
 			]
-		}
+		],
+		[
+			[
+				{
+					"left_ico":"iconfont icon-shezhi setting_label",
+					"tit":"综合演示",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-cube",
+							"tit":"基础配置"
+						},
+						{
+							"left_ico":"iconfont icon-lifering",
+							"tit":"资源管理"
+						},
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"分级字典"
+						},
+						{
+							"left_ico":"iconfont icon-file",
+							"tit":"数据字典"
+						},
+						{
+							"left_ico":"iconfont icon-link",
+							"tit":"常用链接"
+						},
+						{
+							"left_ico":"iconfont icon-refresh1",
+							"tit":"初始缓存"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-user setting_label",
+					"tit":"用户管理",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-sitemap",
+							"tit":"组织机构"
+						},
+						{
+							"left_ico":"iconfont icon-user",
+							"tit":"用户信息"
+						},
+						{
+							"left_ico":"iconfont icon-user-o",
+							"tit":"角色授权"
+						},
+						{
+							"left_ico":"iconfont icon-group",
+							"tit":"会员管理"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-code setting_label",
+					"tit":"代码生成",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-book",
+							"tit":"生成代码"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-desktop setting_label",
+					"tit":"系统监控",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"操作日志"
+						},
+						{
+							"left_ico":"iconfont icon-listul",
+							"tit":"异常日志"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-zhaopian setting_label",
+					"tit":"图形报表",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"折线图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"柱状图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"饼饼图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"雷达图"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"扩展组件",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时间轴"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"扩组件"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时光机"
+						}
+					]
+				}
+			]
+		],
+		[
+			[
+				{
+					"left_ico":"iconfont icon-shezhi setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-cube",
+							"tit":"基础配置"
+						},
+						{
+							"left_ico":"iconfont icon-lifering",
+							"tit":"资源管理"
+						},
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"分级字典"
+						},
+						{
+							"left_ico":"iconfont icon-file",
+							"tit":"数据字典"
+						},
+						{
+							"left_ico":"iconfont icon-link",
+							"tit":"常用链接"
+						},
+						{
+							"left_ico":"iconfont icon-refresh1",
+							"tit":"初始缓存"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-user setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-sitemap",
+							"tit":"组织机构"
+						},
+						{
+							"left_ico":"iconfont icon-user",
+							"tit":"用户信息"
+						},
+						{
+							"left_ico":"iconfont icon-user-o",
+							"tit":"角色授权"
+						},
+						{
+							"left_ico":"iconfont icon-group",
+							"tit":"会员管理"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-code setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-book",
+							"tit":"生成代码"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-desktop setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"操作日志"
+						},
+						{
+							"left_ico":"iconfont icon-listul",
+							"tit":"异常日志"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-zhaopian setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"折线图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"柱状图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"饼饼图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"雷达图"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"33333",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时间轴"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"扩组件"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时光机"
+						}
+					]
+				}
+			]
+		],
+		[
+			[
+				{
+					"left_ico":"iconfont icon-shezhi setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-cube",
+							"tit":"基础配置"
+						},
+						{
+							"left_ico":"iconfont icon-lifering",
+							"tit":"资源管理"
+						},
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"分级字典"
+						},
+						{
+							"left_ico":"iconfont icon-file",
+							"tit":"数据字典"
+						},
+						{
+							"left_ico":"iconfont icon-link",
+							"tit":"常用链接"
+						},
+						{
+							"left_ico":"iconfont icon-refresh1",
+							"tit":"初始缓存"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-user setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-sitemap",
+							"tit":"组织机构"
+						},
+						{
+							"left_ico":"iconfont icon-user",
+							"tit":"用户信息"
+						},
+						{
+							"left_ico":"iconfont icon-user-o",
+							"tit":"角色授权"
+						},
+						{
+							"left_ico":"iconfont icon-group",
+							"tit":"会员管理"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-code setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-book",
+							"tit":"生成代码"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-desktop setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"操作日志"
+						},
+						{
+							"left_ico":"iconfont icon-listul",
+							"tit":"异常日志"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-zhaopian setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"折线图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"柱状图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"饼饼图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"雷达图"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"司思丝丝",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时间轴"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"扩组件"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时光机"
+						}
+					]
+				}
+			]
+		],
+		[
+			[
+				{
+					"left_ico":"iconfont icon-shezhi setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-cube",
+							"tit":"基础配置"
+						},
+						{
+							"left_ico":"iconfont icon-lifering",
+							"tit":"资源管理"
+						},
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"分级字典"
+						},
+						{
+							"left_ico":"iconfont icon-file",
+							"tit":"数据字典"
+						},
+						{
+							"left_ico":"iconfont icon-link",
+							"tit":"常用链接"
+						},
+						{
+							"left_ico":"iconfont icon-refresh1",
+							"tit":"初始缓存"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-user setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-sitemap",
+							"tit":"组织机构"
+						},
+						{
+							"left_ico":"iconfont icon-user",
+							"tit":"用户信息"
+						},
+						{
+							"left_ico":"iconfont icon-user-o",
+							"tit":"角色授权"
+						},
+						{
+							"left_ico":"iconfont icon-group",
+							"tit":"会员管理"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-code setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-book",
+							"tit":"生成代码"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-desktop setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-bookmark",
+							"tit":"操作日志"
+						},
+						{
+							"left_ico":"iconfont icon-listul",
+							"tit":"异常日志"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-zhaopian setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"折线图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"柱状图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"饼饼图"
+						},
+						{
+							"left_ico":"iconfont icon-vine ",
+							"tit":"雷达图"
+						}
+					]
+				}
+			],
+			[
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"呜呜呜呜",
+					"timer":[
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时间轴"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"扩组件"
+						},
+						{
+							"left_ico":"iconfont icon-vine setting_label",
+							"tit":"时光机"
+						}
+					]
+				}
+			]
+		]
 	]
+
+
 }

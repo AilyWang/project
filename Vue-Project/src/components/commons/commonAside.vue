@@ -1,210 +1,48 @@
 <template>
     <div class="aside">
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-shezhi setting_label"></i>
-                </div>
-                <div class="panel_setting_text">系统设置</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-cube"></i></span>
-                        <span class="panel_cf">基础配置</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-lifering"></i></span>
-                        <span class="panel_cf">资源管理</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-bookmark"></i></span>
-                        <span class="panel_cf">分级字典</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-                        <span class="panel_cf">数据字典</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-link"></i></span>
-                        <span class="panel_cf">常用链接</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-refresh1"></i></span>
-                        <span class="panel_cf">初始缓存</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-user setting_label"></i>
-                </div>
-                <div class="panel_setting_text">用户管理</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-sitemap"></i></span>
-                        <span class="panel_cf">组织机构</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-user"></i></span>
-                        <span class="panel_cf">用户信息</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-user-o"></i></span>
-                        <span class="panel_cf">角色授权</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-group"></i></span>
-                        <span class="panel_cf">会员管理</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-code setting_label"></i>
-                </div>
-                <div class="panel_setting_text">代码生成</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-book"></i></span>
-                        <span class="panel_cf">生成代码</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-desktop setting_label"></i>
-                </div>
-                <div class="panel_setting_text">系统监控</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-list-alt"></i></span>
-                        <span class="panel_cf">操作日志</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-listul"></i></span>
-                        <span class="panel_cf">异常日志</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      <div class="aside_panel_setting">
+      <div class="aside_panel_setting" v-for='e in asideData'>
+        <!-- {{e[0]}} -->
         <div class="panle_setting_cont">
           <div class="panel_setting_label">
-            <i class="iconfont icon-zhaopian setting_label"></i>
+            <i :class="e[0].left_ico"></i>
           </div>
-          <div class="panel_setting_text">图形报表</div>
+          <div class="panel_setting_text">{{e[0].tit}}</div>
           <div class="panel_setting_dropdown">
             <a href="javascript:;" class="setting_dp"></a>
           </div>
         </div>
-        <ul class="panel_list">
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
-              <span class="panel_cf">折线图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
-              <span class="panel_cf">柱状图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
-              <span class="panel_cf">饼饼图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-save"></i></span>
-              <span class="panel_cf">雷达图</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="aside_panel_setting" v-for='e in expand'>
-        <div class="panle_setting_cont">
-          <div class="panel_setting_label">
-            <i :class="e.left_ico"></i>
-          </div>
-          <div class="panel_setting_text">{{e.tit}}</div>
-          <div class="panel_setting_dropdown">
-            <a href="javascript:;" class="setting_dp"></a>
-          </div>
-        </div>
-
         <ul class="panel_list" >
-          <li class="panel_list_li" v-for='t in e.timer'>
+          <li class="panel_list_li" v-for='t in e[0].timer'>
             <a href="javascript:;" class="panel_base_config">
               <span class="panel_cf panel_cf_label">
                 <i :class="t.left_ico"></i></span>
               <span class="panel_cf">{{t.tit}}</span>
             </a>
           </li>
-         
         </ul>
       </div>
     </div>
 </template>
-
 <script>
 import Test from '../../api/test'
     export default{
-
         mounted(){
             this.show();
         },
+        updated(){
+          this.show();
+        },
         data(){
           return {
-            expand:[]
+            asideData:[]
           }
         },
         methods: {
+            changeAside(){
+               Test.getAside2((data)=>{
+                this.asideData = data
+              })
+             },
             show(){
                 $('.panel_setting_text').click(function(e){
                     e.stopPropagation();
@@ -220,10 +58,10 @@ import Test from '../../api/test'
             }
         },
          created(){
-          Test.getCarouselImg((data)=>{
-            this.expand = data
-            console.log(this.expand[0])
+          Test.getAside((data)=>{
+            this.asideData = data[0]
           })
+
         }
     }
 </script>

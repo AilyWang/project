@@ -39,8 +39,8 @@
       </a>
   	</nav>
   	<section class="test_section_content">
-       <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-      <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+       <!-- <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
+      <!-- <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
         <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
         <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
   	</section>
@@ -231,10 +231,14 @@
     .test_section_content{
       overflow:hidden;
       flex:1;
-      div{
+      .tab-card{
         height:100%;
         display:none;
+         #layui-layer3{
+        display:none;
       }
+      }
+     
     }
 }
 </style>

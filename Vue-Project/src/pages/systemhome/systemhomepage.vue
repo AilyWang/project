@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="app">
         <common-header></common-header>
-        <common-aside></common-aside>
+        <system-moddle></system-moddle>
         <common-footer></common-footer>
     </div>
 </template>
@@ -9,17 +9,21 @@
 <script>
     import CommonHeader from "../../components/commons/commonHeader"
     import CommonFooter from "../../components/commons/commonFooter"
-    import CommonAside from "../../components/commons/commonAside"
+    import SystemModdle from "../../components/systemhomes/systemmoddle/systemmodule"
     export default {
         name: "PublickPage",
         components:{
             CommonHeader,
             CommonFooter,
-            CommonAside
+            SystemModdle
         }
     }
 </script>
 
 <style scoped>
-
+.app{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 </style>

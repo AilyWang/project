@@ -21,9 +21,6 @@
 
 <style scoped>
 .footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     background: #fff;
     border-top: 1px solid #d3d3d3;

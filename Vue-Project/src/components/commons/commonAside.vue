@@ -159,13 +159,10 @@
 <style scoped>
 .aside{
     width: 225px;
-    height: auto;
-    height: 700px;
-    min-height: 700px;
+    height: 100%;
+    /* height: auto; */
+    /* min-height: 700px; */
     background: #222d32;
-    position: absolute;
-    left: 0;
-    top: 50px;
     color: #fff;
     font-size: 12px;
 }

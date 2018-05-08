@@ -1,4 +1,5 @@
 <template>
+    <!-- 这个组件应用于公共头部的主题选项 -->
     <span class="theme_options_r_cont">
         <span class="person_img theme_color" :style="'color:'+iconColor"><i class="iconfont icon-tree"></i></span>
         <slot></slot>

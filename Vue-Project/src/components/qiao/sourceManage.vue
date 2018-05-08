@@ -2,16 +2,16 @@
   <div>
     <ul class="source_list">
       <li class="add">
-        新增
+        <a href="javascript:;">新增</a>
       </li>
       <li class="edit">
-        编辑
+        <a href="javascript:;">编辑</a>
       </li>
       <li class="functionMenu">
-        删除
+       <a href="javascript:;">删除</a>
       </li>
       <li class="moduleCode">
-        查询
+        <a href="javascript:;">查询</a>
       </li>
     </ul>
     <source-manage-table></source-manage-table>
@@ -34,6 +34,8 @@
     }
     .source_list{
       width:100%;
+      height:100%;
+      float:right;
       height: 37px;
       padding:3px 2px;
       background:#fafafa;
@@ -44,9 +46,11 @@
         height:30px;
         width:56px;
         font-size:12px;
-        color:#fff;
         border-radius: 2px;
         margin:0 2px;
+        a{
+          color:#fff;
+        }
       }
       .add{
         background: #009688;

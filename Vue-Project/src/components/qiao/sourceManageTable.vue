@@ -10,25 +10,40 @@
         <th>完成率</th>
         <th>操作</th>
       </tr>
-      <tr height="28">
-        <td>1</td>
+      <tr height="28" v-for="(p,index) in product">
+        <td>{{index+1}}</td>
         <td><input type="checkbox"></td>
-        <td>夏普空气净化器xxxxccc</td>
-        <td>2103</td>
-        <td>KC-W200SW</td>
-        <td>1399.00</td>
+        <td>{{p.name}}</td>
+        <td>{{p.num}}</td>
+        <td>{{p.spec}}</td>
+        <td>{{p.price}}</td>
         <td></td>
         <td>
-          <span class="edit">编辑</span>
-          <span class="delete">删除</span>
+          <span class="edit">
+            <a href="javascript:;">编辑</a>
+          </span>
+          <span class="delete">
+            <a href="javascript:;">删除</a>
+          </span>
         </td>
       </tr>
     </table>
 </template>
 
 <script>
+  import ProductApi from '../../api/ProductApi'
     export default {
-        name: "sourceManageTable"
+      name: "sourceManageTable",
+        data(){
+          return{
+            product:[]
+          }
+        },
+        created(){
+          ProductApi.getProductData((data)=>{
+            this.product=data
+          })
+        }
     }
 </script>
 
@@ -51,8 +66,10 @@
           line-height: 22px;
           width:36px;
           height:22px;
-          color:#fff;
           border-radius: 2px;
+          a{
+            color:#fff;
+          }
         }
         .edit{
           background:#009688 ;

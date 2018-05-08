@@ -1,0 +1,22 @@
+{
+	"expand":[
+		{
+			"left_ico":"iconfont icon-vine setting_label",
+			"tit":"扩展组件",
+			"timer":[
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"时间轴"
+				},
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"扩组件"
+				},
+				{
+					"left_ico":"iconfont icon-vine setting_label",
+					"tit":"时光机"
+				}
+			]
+		}
+	]
+}

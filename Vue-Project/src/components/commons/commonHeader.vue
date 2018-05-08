@@ -9,7 +9,7 @@
                             <span><i class="iconfont icon-envira"></i></span>
                             EMIS快速开发平台
                         </td>
-                        <td class="header_back">
+                        <td class="header_back" @click='showMenu()'>
                             <a href="javascript:;" class="l_btn_text"><i class="iconfont icon-chevron-circle-left"></i></a>
                         </td>
                         <td>
@@ -176,6 +176,11 @@ import HeadColor from '../public/headerColor'
                         "cont": "橙色主题-亮"
                     }
                 ]
+            }
+        },
+        methods:{
+            showMenu(){
+                $('.aside').toggle()
             }
         },
         components:{

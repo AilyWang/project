@@ -1,8 +1,8 @@
 <template>
   <section class="test_section">
   	<nav class='test_section_nav'>
-      <a href="#" class="click_previous">
-            <i class="icon iconfont icon-previous"></i>
+      <a href="#" class="click_previous" @click='click_previous()'>
+        <i class="icon iconfont icon-previous"></i>
       </a>
       <div class='left_nav'>
     		<ul >
@@ -34,15 +34,15 @@
                 <i class="icon iconfont icon-eye"></i>
   			</a>
   		</div>
-        <a href="#" class="click_next">
+        <a href="#" class="click_next" @click='click_next()'>
             <i class="icon iconfont icon-next"></i>
       </a>
   	</nav>
   	<section class="test_section_content">
        <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-       <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-       <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+      <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
   	</section>
   </section>
 </template>
@@ -52,38 +52,62 @@
       data(){
         return{
           isFull:true,
-           tabsName: [{  
+           tabsName: 
+           [
+                {  
                     name: "HTML",  
                     isActive: true  
-                }, {  
+                },
+                 {  
                     name: "CSS",  
                     isActive: false  
-                }, {  
-                    name: "Vue",  
-                    isActive: false  
-                },{  
-                    name: "Angular",  
-                    isActive: false  
-                }],  
-                active: false  
-        }
+                }
+            ],  
+            active: false ,
+            ulLeftNum : 0,
+            countWidth:0,
+            allLiWidth : 0
+          }
+
       },
       methods:{
-        tabsSwitch(tabIndex) {  
-  
-                    var tabCardCollection = document.querySelectorAll(".tab-card"),  
-                        len = tabCardCollection.length;  
-  
-                    for(var i = 0; i < len; i++) {  
-                        tabCardCollection[i].style.display = "none";  
-                        this.tabsName[i].isActive = false;  
-                    }  
-                    this.tabsName[tabIndex].isActive = true;  
-                    tabCardCollection[tabIndex].style.display = "block";  
-                }  ,
-        nowClick(){
-          console.log(this)
+         click_previous(){
+          var ul = document.querySelectorAll('.left_nav ul')[0]
+          var li = Array.from(ul.children);
+          if(this.ulLeftNum === 0){
+            this.ulLeftNum = 0
+          }else{
+            this.ulLeftNum+=li[0].offsetWidth
+            ul.style.left = this.ulLeftNum + 'px';
+          }
         },
+        click_next(){
+          var ul = document.querySelectorAll('.left_nav ul')[0];
+          var left_nav_width = ul.parentNode.offsetWidth;
+          var li = Array.from(ul.children);
+          li.forEach((v,k)=>{
+            this.allLiWidth+=v.offsetWidth+3
+          })
+          if((this.allLiWidth - left_nav_width)<0){
+             ul.style.left = 0 + 'px';
+          }else if((this.allLiWidth - left_nav_width)<(this.allLiWidth + this.ulLeftNum)){
+              this.ulLeftNum-=li[0].offsetWidth
+              ul.style.left = this.ulLeftNum + 'px';
+          }else{
+              ul.style.left = -(this.allLiWidth - left_nav_width) + 'px';
+          }
+        },
+        tabsSwitch(tabIndex) {  
+            var tabCardCollection = document.querySelectorAll(".tab-card"),  
+                len = tabCardCollection.length;  
+            for(var i = 0; i < len; i++) {  
+                tabCardCollection[i].style.display = "none";  
+                this.tabsName[i].isActive = false;  
+            }  
+            this.tabsName[tabIndex].isActive = true;  
+            tabCardCollection[tabIndex].style.display = "block";  
+        }  ,
+        // 刷新
         changeData(){
             $.get("Reboot.run", function (result) {
                 console.log(result);
@@ -92,6 +116,7 @@
                 window.location.reload();
             });
         },
+        // 全屏
   	    changeView(){
   	    	 if(this.isFull){
               this.exitFull()
@@ -143,24 +168,27 @@
    overflow: hidden;
    flex-direction:column;
     .test_section_nav{
-      font-size:12px;
+        font-size:12px;
         background:rgb(243,243,243);
+        border-bottom:1px solid #ddd;
         display:flex;
         align-items: center;
         i{
           font-size: 14px;
+          color:rgb(127,127,127)
         }
       .left_nav{
           flex:1;
         overflow: hidden;
         ul{
             width:3700px;
+            position:relative;
             display:flex;
             li{
                margin-right:3px;
               a{
                 display:block;
-                line-height:34px;
+                line-height:30px;
                 padding:0 5px;
                 border:1px solid #ddd;
                 border-bottom:none;
@@ -171,9 +199,10 @@
                 }
               }
               .active{
-                background:rgba(255,0,0,.2);
-                .icon-close{
-                  color:#f06;
+                background:rgb(252,252,252);
+                border-top:3px solid #3c8dbc;
+                .icon-close:hover{
+                  background:rgb(222,222,222);
                 }
               }
             }
@@ -181,7 +210,7 @@
 
       }
        a:hover{
-            background:#fff;
+            background:rgb(222,222,222);
             color:#000;
        }
       .right_btn{

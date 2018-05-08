@@ -167,75 +167,42 @@
           </li>
         </ul>
       </div>
-      <div class="aside_panel_setting">
+      <div class="aside_panel_setting" v-for='e in expand'>
         <div class="panle_setting_cont">
           <div class="panel_setting_label">
-            <i class="iconfont icon-vine setting_label"></i>
+            <i :class="e.left_ico"></i>
           </div>
-          <div class="panel_setting_text">扩展组件</div>
+          <div class="panel_setting_text">{{e.tit}}</div>
           <div class="panel_setting_dropdown">
             <a href="javascript:;" class="setting_dp"></a>
           </div>
         </div>
-        <ul class="panel_list">
-          <li class="panel_list_li">
+
+        <ul class="panel_list" >
+          <li class="panel_list_li" v-for='t in e.timer'>
             <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">时间轴</span>
+              <span class="panel_cf panel_cf_label">
+                <i :class="t.left_ico"></i></span>
+              <span class="panel_cf">{{t.tit}}</span>
             </a>
           </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">柱状图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">饼饼图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">雷达图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">折线图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">柱状图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">饼饼图</span>
-            </a>
-          </li>
-          <li class="panel_list_li">
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-              <span class="panel_cf">雷达图</span>
-            </a>
-          </li>
+         
         </ul>
       </div>
     </div>
 </template>
 
 <script>
+import Test from '../../api/test'
     export default{
 
         mounted(){
             this.show();
+        },
+        data(){
+          return {
+            expand:[]
+          }
         },
         methods: {
             show(){
@@ -251,6 +218,12 @@
 //                    $(this).children().eq(1).toggle('fast');
 //                })
             }
+        },
+         created(){
+          Test.getCarouselImg((data)=>{
+            this.expand = data
+            console.log(this.expand[0])
+          })
         }
     }
 </script>

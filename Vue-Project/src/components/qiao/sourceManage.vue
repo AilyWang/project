@@ -2,7 +2,7 @@
   <div>
     <ul class="source_list">
       <li class="add">
-        <a href="javascript:;">新增</a>
+        <a href="javascript:;" @click="showAdd">新增</a>
       </li>
       <li class="edit">
         <a href="javascript:;">编辑</a>
@@ -15,17 +15,31 @@
       </li>
     </ul>
     <source-manage-table></source-manage-table>
+    <choice-information v-show="hidden"></choice-information>
   </div>
 </template>
 
 <script>
   import sourceManageTable from './sourceManageTable'
-    export default {
-        name: "sourceManage",
-        components:{
-          sourceManageTable
-        }
+  import choiceInformation from './choiceInformation'
+
+  export default {
+    name: "sourceManage",
+    data(){
+      return{
+        hidden:false
+      }
+    },
+    components:{
+      sourceManageTable,
+      choiceInformation
+    },
+    methods:{
+      showAdd(){
+        this.hidden=true;
+      }
     }
+  }
 </script>
 
 <style lang="scss" scoped>

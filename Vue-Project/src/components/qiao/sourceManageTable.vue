@@ -28,22 +28,25 @@
         </td>
       </tr>
     </table>
+
 </template>
 
 <script>
   import ProductApi from '../../api/ProductApi'
     export default {
       name: "sourceManageTable",
-        data(){
-          return{
-            product:[]
-          }
-        },
-        created(){
-          ProductApi.getProductData((data)=>{
-            this.product=data
-          })
+      data(){
+        return{
+          product:[],
+
         }
+      },
+      created(){
+        ProductApi.getProductData((data)=>{
+          this.product=data
+        })
+      },
+
     }
 </script>
 

@@ -40,9 +40,9 @@
         <label>销售单价</label><input type="text" v-model="price"><span><img src="../../assets/images/upArrow.jpg" style="padding-top: 2px" @click="addPrice">
       <img src="../../assets/images/downArrow.jpg" @click="reducePrice"></span>
       </div>
-      <div style="margin-top: 10px" class="product_name thumbnail">
-        <label>产品缩略图</label><input type="text"><span><img src="../../assets/images/upload.jpg" style="float: left;padding-left:5px">上传图片</span>
-      </div>
+      <!--<div style="margin-top: 10px" class="product_name thumbnail">-->
+        <!--<label>产品缩略图</label><input type="text"><span><img src="../../assets/images/upload.jpg" style="float: left;padding-left:5px">上传图片</span>-->
+      <!--</div>-->
       <div class="note_infor">
         <label>备注信息</label><input type="text" name="desc">
       </div>

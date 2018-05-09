@@ -5,6 +5,10 @@ import publickPage from '@/pages/publicpage/publickPage'
 import sourceManage from '@/components/qiao/sourceManage'
 import addShadow from '@/components/qiao/addShadow'
 import addShadowOptionalMsg from '@/components/qiao/addShadowOptionalMsg'
+import operateTip from '@/components/qiao/operateTip'
+import mustInformation from '@/components/qiao/mustInformation'
+import choiceInformation from '@/components/qiao/choiceInformation'
+
 
 
 Vue.use(Router)
@@ -30,6 +34,21 @@ export default new Router({
       path: '/addShadow',
       name: 'addShadow',
       component: addShadow
+    },
+    {
+      path: '/operateTip',
+      name: 'operateTip',
+      component: operateTip
+    },
+    {
+      path: '/mustInformation',
+      name: 'mustInformation',
+      component: mustInformation
+    },
+    {
+      path: '/choiceInformation',
+      name: 'choiceInformation',
+      component: choiceInformation
     }
   ]
 })

@@ -5,7 +5,7 @@
         <span>基本信息</span>
       </p>
       <div style="margin-top: 10px" class="product_name">
-        <label>商品名称</label><input type="text">
+        <label>商品名称</label><input type="text" >
       </div>
       <div class="product_quality">
         <p class="left">
@@ -25,14 +25,15 @@
       <div>
         <label>商品描述</label><input type="text" name="desc">
       </div>
-
+      {{productName}}
     </form>
   </div>
 </template>
 
 <script>
     export default {
-        name: "addShadowMsgForm"
+        name: "addShadowMsgForm",
+
     }
 </script>
 

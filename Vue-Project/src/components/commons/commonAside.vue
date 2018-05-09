@@ -34,7 +34,8 @@ import Test from '../../api/test'
         },
         data(){
           return {
-            asideData:[]
+            asideData:[],
+            n:0
           }
         },
         methods: {
@@ -59,7 +60,7 @@ import Test from '../../api/test'
         },
          created(){
           Test.getAside((data)=>{
-            this.asideData = data[0]
+            this.asideData = data[this.n]
           })
 
         }

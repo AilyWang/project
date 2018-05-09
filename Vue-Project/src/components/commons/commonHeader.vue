@@ -16,36 +16,14 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td class="header_td_bd header_td_bg">
+                                        <td @click='setIdx(i)' class="header_td_bd header_td_bg" v-for='(a,i) in aboutAside'>
+                                                <!-- {{i}} -->
                                             <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-shezhi"></i></p>
-                                                <p>平台设置</p>
+                                                <p><i :class="a[0].ico"></i></p>
+                                                <p>{{a[0].tit}}</p>
                                             </a>
                                         </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-edge"></i></p>
-                                                <p>门户网站</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-group"></i></p>
-                                                <p>协同办公</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-xing-square"></i></p>
-                                                <p>流程中心</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-wechat"></i></p>
-                                                <p>即时聊天</p>
-                                            </a>
-                                        </td>
+                                     
                                     </tr>
                                 </tbody>
                             </table>
@@ -175,12 +153,47 @@ import HeadColor from '../public/headerColor'
                         "color": "#f39c12",
                         "cont": "橙色主题-亮"
                     }
+                ],
+                aboutAside:[
+                    [
+                        {
+                            "ico":"iconfont icon-shezhi",
+                            "tit":"平台设置"
+                        }
+                    ],
+                     [
+                        {
+                            "ico":"iconfont icon-edge",
+                            "tit":"门户网站"
+                        }
+                    ],
+                     [
+                        {
+                            "ico":"iconfont icon-group",
+                            "tit":"协同办公"
+                        }
+                    ],
+                     [
+                        {
+                            "ico":"iconfont icon-xing-square",
+                            "tit":"流程中心"
+                        }
+                    ],
+                     [
+                        {
+                            "ico":"iconfont icon-wechat",
+                            "tit":"即时聊天"
+                        }
+                    ]
                 ]
             }
         },
         methods:{
             showMenu(){
                 $('.aside').toggle()
+            },
+            setIdx(i){
+                alert(i)
             }
         },
         components:{

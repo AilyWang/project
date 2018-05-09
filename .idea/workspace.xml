@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e239b342-f3ce-4318-a88f-4bcd83b911d6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Vue-Project/src/assets/images/tip.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Vue-Project/src/components/qiao/choiceInformation.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Vue-Project/src/components/qiao/mustInformation.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Vue-Project/src/components/qiao/operateTip.vue" afterDir="false" />
@@ -327,12 +328,12 @@
       <workItem from="1525693639054" duration="9717000" />
       <workItem from="1525740485345" duration="14563000" />
       <workItem from="1525768527534" duration="18229000" />
-      <workItem from="1525846256609" duration="19068000" />
+      <workItem from="1525846256609" duration="19311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83659000" />
+    <option name="totallyTimeSpent" value="83902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />

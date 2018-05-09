@@ -1,8 +1,8 @@
 <template>
     <div class="aside">
-      <div class="aside_panel_setting" v-for='e in asideData'>
-        <!-- {{e[0]}} -->
-        <div class="panle_setting_cont">
+        
+      <div class="aside_panel_setting" v-for='(e,i) in asideData'>
+        <div @click='showMeun(i)'  class="panle_setting_cont">
           <div class="panel_setting_label">
             <i :class="e[0].left_ico"></i>
           </div>
@@ -12,25 +12,33 @@
           </div>
         </div>
         <ul class="panel_list" >
-          <li class="panel_list_li" v-for='t in e[0].timer'>
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label">
-                <i :class="t.left_ico"></i></span>
-              <span class="panel_cf">{{t.tit}}</span>
-            </a>
-          </li>
+            <common-aside-li :send="e[0].timer"></common-aside-li>
         </ul>
       </div>
     </div>
 </template>
 <script>
-import Test from '../../api/test'
+    import CommonAsideLi from "./commonAsideLi"
+    import Test from '../../api/test'
+    import {mapGetters,mapActions} from "vuex"
+       
     export default{
-        mounted(){
-            this.show();
+        components:{
+            CommonAsideLi
         },
-        updated(){
-          this.show();
+        computed:mapGetters({
+            num:"getNum"
+        }),
+        created(){
+
+             Test.getAside((data)=>{
+                this.asideData = data[this.num]
+              })
+
+        },
+        mounted(){
+        },
+        beforeupdate(){
         },
         data(){
           return {
@@ -39,31 +47,27 @@ import Test from '../../api/test'
           }
         },
         methods: {
-            changeAside(){
-               Test.getAside2((data)=>{
-                this.asideData = data
-              })
-             },
-            show(){
-                $('.panel_setting_text').click(function(e){
-                    e.stopPropagation();
-                    $(this).parent().siblings().toggle("fast");
-                    $(this).parent().find('.panel_setting_dropdown').toggleClass("panel_setting_dropdown_active");
-                })
-//                $(".aside_panel_setting").click(function(e){
-//                    e.stopPropagation();
-//                    console.log(1);
-//                    $(this).children().eq(0).children().eq(2).toggleClass('panel_setting_dropdown_active')
-//                    $(this).children().eq(1).toggle('fast');
-//                })
+            showMeun(i){
+                $($('.panle_setting_cont')[i]).siblings().toggle("slow");
+                $($('.panel_setting_dropdown')[i]).toggleClass("panel_setting_dropdown_active");
             }
         },
          created(){
+            
           Test.getAside((data)=>{
-            this.asideData = data[this.n]
+            this.asideData = data[this.num]
           })
-
+      },
+        watch:{
+            num: function (x,y){
+                console.log(x,y)
+                Test.getAside((data)=>{
+                    this.asideData = data[this.num]
+                })
+            }
         }
+        
+       
     }
 </script>
 

@@ -16,7 +16,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td @click='setIdx(i)' class="header_td_bd header_td_bg" v-for='(a,i) in aboutAside'>
+                                        <td @click='setIdx(i)' class="header_td_bd " v-for='(a,i) in aboutAside'>
                                                 <!-- {{i}} -->
                                             <a href="javascript:;" class="l_btn_text header_btn">
                                                 <p><i :class="a[0].ico"></i></p>
@@ -95,8 +95,11 @@
 </template>
 
 <script>
-import HeadColor from '../public/headerColor'
+    import HeadColor from '../public/headerColor'
+    import {mapGetters,mapActions} from "vuex"
     export default{
+      
+    
         name: "CommonHeader",
         data(){
             return {
@@ -196,6 +199,21 @@ import HeadColor from '../public/headerColor'
                 alert(i)
             }
         },
+        computed:mapGetters({
+            num:"getNum"
+        }),
+        methods: mapActions({
+            setIdx:"add"
+        }),
+        // methods:{
+
+        //     showMenu(){
+        //         $('.aside').toggle()
+        //     },
+        //     setIdx(i){
+        //         $($('.header_td_bd')[i]).toggleClass('header_td_bg').siblings().removeClass('header_td_bg')
+        //     }
+        // },
         components:{
                 HeadColor
         }
@@ -214,7 +232,6 @@ import HeadColor from '../public/headerColor'
     }
     @media screen and (max-width:1048px){
         .header_r{
-            /*overflow: hidden;*/
             display: none;
         }
     }
@@ -233,16 +250,19 @@ import HeadColor from '../public/headerColor'
         border-right: 1px #367fa9 solid;
     }
     .header_td_bd:hover{
-        background: #367fa9;
+        background: rgba(255,0,0,.6);
+        background: rgb(0, 150, 136);
+        
     }
     .header_td_bg{
-        background: #367fa9;
+        background: rgba(255,0,0,.6);
+        background: rgb(0, 150, 136);
     }
     .header_quick{
         background: #367fa9;
         padding: 0 5px;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 900;
         padding: 0 15px 0 10px;
     }
     .header_back{

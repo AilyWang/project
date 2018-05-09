@@ -12,24 +12,21 @@
             <a href="javascript:;" class="setting_dp"></a>
           </div>
         </div>
-        
         <ul class="panel_list" >
-          <li class="panel_list_li" v-for='t in e[0].timer'>
-            <a href="javascript:;" class="panel_base_config">
-              <span class="panel_cf panel_cf_label">
-                <i :class="t.left_ico"></i></span>
-              <span class="panel_cf">{{t.tit}}</span>
-            </a>
-          </li>
+            <common-aside-li :send="e[0].timer"></common-aside-li>
         </ul>
       </div>
     </div>
 </template>
 <script>
+    import CommonAsideLi from "./commonAsideLi"
     import Test from '../../api/test'
     import {mapGetters,mapActions} from "vuex"
        
     export default{
+        components:{
+            CommonAsideLi
+        },
         computed:mapGetters({
             num:"getNum"
         }),

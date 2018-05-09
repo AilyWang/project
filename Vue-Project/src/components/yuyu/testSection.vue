@@ -14,7 +14,7 @@
                <a href="#" v-else-if='index !== 0'  @click="tabsSwitch(index)" v-bind:class="{active:tab.isActive}">
                 <i class="icon iconfont icon-home"></i>
               {{tab.name}} 
-              <i class="icon iconfont icon-close"></i>
+              <i id="close" class="icon iconfont icon-close"></i>
               </a>
           </li>
     		
@@ -39,24 +39,42 @@
       </a>
   	</nav>
   	<section class="test_section_content">
+      <!-- <div class="tab-card"><iframe src="http://demo.topjui.com/html/portal/index.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
        <!-- <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-        <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
+        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
       <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
         <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
   	</section>
   </section>
 </template>
 <script>
+import {mapGetters,mapActions} from "vuex"
   export default {
       name: 'testSection',
+      computed:mapGetters({
+            tab:"getTab"
+      }),
+      updated(){
+          this.tabsName.name = this.tab.tit
+            console.log(this.tab)
+      },
+      beforeupdated(){
+
+      },
+      mounted(){
+      },
       data(){
         return{
           isFull:true,
            tabsName: 
            [
                 {  
-                    name: "HTML",  
+                    name: "系统首页",  
                     isActive: true  
+                },
+                 {  
+                    name: "系统首页",  
+                    isActive: false  
                 }
                 
             ],  
@@ -68,15 +86,15 @@
 
       },
       methods:{
-         click_previous(){
-          var ul = document.querySelectorAll('.left_nav ul')[0]
-          var li = Array.from(ul.children);
-          if(this.ulLeftNum === 0){
-            this.ulLeftNum = 0
-          }else{
-            this.ulLeftNum+=li[0].offsetWidth
-            ul.style.left = this.ulLeftNum + 'px';
-          }
+        click_previous(){
+            var ul = document.querySelectorAll('.left_nav ul')[0]
+            var li = Array.from(ul.children);
+            if(this.ulLeftNum === 0){
+              this.ulLeftNum = 0
+            }else{
+              this.ulLeftNum+=li[0].offsetWidth
+              ul.style.left = this.ulLeftNum + 'px';
+            }
         },
         click_next(){
           var ul = document.querySelectorAll('.left_nav ul')[0];
@@ -123,8 +141,8 @@
               this.isFull = true;
            }
   	    },
-    	// 进入全屏
-	    requestFullScreen(element) {
+      	// 进入全屏
+  	    requestFullScreen(element) {
 	        var requestMethod = element.requestFullScreen || //W3C
 	        element.webkitRequestFullScreen ||    //Chrome等
 	        element.mozRequestFullScreen || //FireFox
@@ -137,8 +155,8 @@
 	                wscript.SendKeys("{F11}");
 	            }
 	        }
-	    },
-	    //退出全屏
+  	    },
+  	    //退出全屏
         exitFull() {
 	        var exitMethod = document.exitFullscreen || //W3C
 	        document.mozCancelFullScreen ||    //Chrome等

@@ -15,7 +15,7 @@ router.all('*', function(req, res, next) {
   res.header("Content-Type", "application/json;charset=utf-8");
   next();
 });
-router.get("/s",(req,res)=>{
+router.get("/S",(req,res)=>{
   res.json(TestData);
 })
 module.exports = router;

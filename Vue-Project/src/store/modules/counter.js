@@ -1,12 +1,14 @@
 
 export default {
     state:{
-        num:0
+        num:0,
+        tabData:[]
     }, //定义需要共享的状态
     mutations:{
         "inc":(state,args)=>{
             // console.log(args )
             state.num = args
+            state.tabData = args
             // console.log(state.num)
 
         }
@@ -29,6 +31,9 @@ export default {
     getters:{
         "getNum":(state)=>{
             return state.num
+        },
+        "getTab":(state)=>{
+            return state.tabData
         }
     }//用来获取处理好的状态的地方(新的状态)
 }

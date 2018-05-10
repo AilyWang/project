@@ -10,17 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-<<<<<<< HEAD
     "element-ui": "^2.3.7",
-=======
     "echarts": "^4.1.0",
     "jquery": "^3.3.1",
-<<<<<<< HEAD
->>>>>>> 11f8de274f94a3c9c2300c230f6bb25dbaafaae0
-=======
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
->>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

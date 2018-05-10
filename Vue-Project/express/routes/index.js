@@ -1,22 +1,16 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 var index  = require('../../mock/index.json');
 var from   = require('../../mock/from.json')
-=======
 var TestData = require("../../mock/test.json");
->>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-<<<<<<< HEAD
 
 /*  设置请求头  */
-=======
 //设置跨域访问
->>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
 router.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -25,7 +19,6 @@ router.all('*', function(req, res, next) {
   res.header("Content-Type", "application/json;charset=utf-8");
   next();
 });
-<<<<<<< HEAD
 router.get('/index', function(req, res, next) {
   res.json(index);
 });
@@ -34,9 +27,7 @@ router.get('/from', function(req, res, next) {
 });
 
 
-=======
 router.get("/s",(req,res)=>{
   res.json(TestData);
 })
->>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
 module.exports = router;

@@ -10,7 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "element-ui": "^2.3.7",
+=======
+    "echarts": "^4.1.0",
+    "jquery": "^3.3.1",
+>>>>>>> 11f8de274f94a3c9c2300c230f6bb25dbaafaae0
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

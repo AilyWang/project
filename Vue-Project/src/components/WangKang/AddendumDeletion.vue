@@ -139,12 +139,15 @@ export default {
 </script>
 
 <style>
+   body{
+    height: 1000px;
+    overflow-y: scroll;
+   }
  
   .box_section{
-    width:750px;
-    height:100%;
-    padding-left:220px;
-    padding-top:90px;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 800px;
   }
   .btn_left{
     padding:10px 4px;
@@ -177,6 +180,7 @@ export default {
     border-color:#dddddd;
     border-collapse:collapse;
     margin-top:20px;
+    width: 700px;
   }
   .tab_top tr td{
     border-right:1px dashed #dddddd;

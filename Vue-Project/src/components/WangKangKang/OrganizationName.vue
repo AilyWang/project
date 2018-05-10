@@ -1,6 +1,6 @@
 <template>
    <div class="section_left">
-     <table class="tab_top" border="1" cellspacing="0" cellpadding="0">
+     <table class="tab_top_" border="1" cellspacing="0" cellpadding="0">
          <tr class="tr_top">
            <td><input type="checkbox"></td>
            <td>机构名称</td>
@@ -142,7 +142,7 @@
     overflow-y: hidden;
 
   }
-  .tab_top{
+  .tab_top_{
     border-color:#dddddd;
     border-collapse:collapse;
     position:fixed;
@@ -150,14 +150,14 @@
     background: white;
     z-index:999;
   }
-  .tab_top tr td{
+  .tab_top_ tr td{
     border-right:1px dashed #dddddd;
     padding:10px 10px;
     text-align: center;
     font-size: 12px;
     font-weight: 600;
   }
-  .tab_top tr td:nth-child(2){
+  .tab_top_ tr td:nth-child(2){
     padding:10px 64px;
   }
   .tab_bottom{

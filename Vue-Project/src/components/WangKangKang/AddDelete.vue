@@ -206,9 +206,11 @@
 
 <style>
   .box_section{
-    position: absolute;
+    /*position: absolute;
     left:500px ;
-    top:100px;
+    top:100px;*/
+    margin-top: 100px;
+    margin-left: 500px;
     width:925px;
     height:100%;
     cursor: pointer;

@@ -34,8 +34,11 @@
 
 <style lang="scss" scoped>
   .shadow{
+    position:absolute;
+    left:0;
+    top:0;
     width:100%;
-    height:600px;
+    height:100%;
     background:rgba(0,0,0,.3);
     position:relative;
     .tip{

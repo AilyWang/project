@@ -5,9 +5,11 @@ import publickPage from '@/pages/publicpage/publickPage'
 import sourceManage from '@/components/qiao/sourceManage'
 import addShadow from '@/components/qiao/addShadow'
 import addShadowOptionalMsg from '@/components/qiao/addShadowOptionalMsg'
+import addShadowMsgForm from '@/components/qiao/addShadowMsgForm'
 import operateTip from '@/components/qiao/operateTip'
 import mustInformation from '@/components/qiao/mustInformation'
 import choiceInformation from '@/components/qiao/choiceInformation'
+import checkProductMsg from '@/components/qiao/checkProductMsg'
 
 
 
@@ -49,6 +51,16 @@ export default new Router({
       path: '/choiceInformation',
       name: 'choiceInformation',
       component: choiceInformation
+    },
+    {
+      path: '/addShadowMsgForm',
+      name: 'addShadowMsgForm',
+      component: addShadowMsgForm
+    },
+    {
+      path: '/checkProductMsg',
+      name: 'checkProductMsg',
+      component: checkProductMsg
     }
   ]
 })

@@ -1,4 +1,5 @@
 <template>
+  <div>
     <table cellpadding="0" cellspacing="0" class="source_table">
       <tr height="28">
         <th></th>
@@ -20,25 +21,31 @@
         <td></td>
         <td>
           <span class="edit">
-            <a href="javascript:;">编辑</a>
+            <a href="javascript:;" @click="showProductMsg(index)">编辑</a>
           </span>
-          <span class="delete">
+          <span class="delete" @click="removeTodo(index)">
             <a href="javascript:;">删除</a>
           </span>
         </td>
       </tr>
     </table>
+    <check-product-msg v-show="hiddenProductMsg"></check-product-msg>
+  </div>
 
 </template>
 
 <script>
   import ProductApi from '../../api/ProductApi'
-    export default {
+  import checkProductMsg from './checkProductMsg'
+  export default {
       name: "sourceManageTable",
+      components:{
+        checkProductMsg
+      },
       data(){
         return{
           product:[],
-
+          hiddenProductMsg:false
         }
       },
       created(){
@@ -46,7 +53,15 @@
           this.product=data
         })
       },
-
+      methods: {
+        removeTodo: function (index) {
+          this.product.splice(index, 1);
+        },
+        showProductMsg(i){
+          this.hiddenProductMsg=!this.hiddenProductMsg;
+          console.log(i);
+        }
+      }
     }
 </script>
 

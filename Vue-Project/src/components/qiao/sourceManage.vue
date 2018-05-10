@@ -1,42 +1,53 @@
 <template>
   <div>
     <ul class="source_list">
-      <li class="add">
-        <a href="javascript:;" @click="showAdd">新增</a>
+      <li class="add" @click="showAdd">
+        <a href="javascript:;">新增</a>
       </li>
-      <li class="edit">
-        <a href="javascript:;">编辑</a>
-      </li>
-      <li class="functionMenu">
-       <a href="javascript:;">删除</a>
-      </li>
+      <!--<li class="edit">-->
+        <!--<a href="javascript:;">编辑</a>-->
+      <!--</li>-->
+      <!--<li class="functionMenu">-->
+       <!--<a href="javascript:;">删除</a>-->
+      <!--</li>-->
       <li class="moduleCode">
-        <a href="javascript:;">查询</a>
+        <a href="javascript:;" @click="checkTip">查询</a>
       </li>
     </ul>
     <source-manage-table></source-manage-table>
-    <choice-information v-show="hidden"></choice-information>
+    <!--<choice-information v-show="hidden"></choice-information>-->
+
+    <add-shadow v-show="hidden"></add-shadow>
+    <operate-tip v-show="check"></operate-tip>
+
   </div>
 </template>
 
 <script>
   import sourceManageTable from './sourceManageTable'
-  import choiceInformation from './choiceInformation'
-
+  // import choiceInformation from './choiceInformation'
+  import addShadow from './addShadow'
+  import operateTip from './operateTip'
   export default {
     name: "sourceManage",
     data(){
       return{
-        hidden:false
+        hidden:false,
+        check:false
       }
     },
     components:{
       sourceManageTable,
-      choiceInformation
+      // choiceInformation,
+      addShadow,
+      operateTip,
     },
     methods:{
       showAdd(){
-        this.hidden=true;
+        this.hidden=!this.hidden;
+      },
+      checkTip(){
+        this.check=!this.hidden;
       }
     }
   }

@@ -21,7 +21,7 @@
         <!--<add-shadow-msg-form></add-shadow-msg-form>-->
         <div class="foot">
           <p>
-            <a href="javascript:;"><i class="iconfont icon-plus"></i>&nbsp;&nbsp;<span class="save" @click="save">保存</span></a>
+            <a href="javascript:;"><i class="iconfont icon-plus"></i>&nbsp;&nbsp;<span class="save">保存</span></a>
             <a href="javascript:;"><i class="iconfont icon-close"></i>&nbsp;&nbsp;<span class="close" @click="shadowHidden">关闭</span></a>
           </p>
         </div>
@@ -57,9 +57,6 @@
               this.tab = 2;
               this.tabname = "addShadowOptionalMsg";
             }
-          },
-          save(){
-
           }
         }
     }
@@ -67,11 +64,14 @@
 
 <style lang="scss" scoped>
   .add_shadow{
+    position:absolute;
+    left:0;
+    top:0;
     background:rgba(0,0,0,.3);
-    /*width:100%;*/
-    /*height:100%;*/
     width:100%;
-    height:1000px;
+    height:100%;
+    /*width:100%;*/
+    /*height:1000px;*/
     .shadow_message{
       width:878px;
       height:495px;

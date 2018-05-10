@@ -5,59 +5,69 @@
         <span>扩展信息</span>
       </p>
       <div style="margin-top: 10px" class="product_name">
-        <label>所属机构</label><input type="text" class="affiliation"><span class="show_orga" @click="showOrga"><img src="../../assets/images/downArrow.jpg"></span>
-        <ul class="organization">
-          <li class="company">
-            <span @click="packUp" class="companyName"></span>深圳易网时代信息技术有限公司
-            <ul class="department">
-              <li >
-                <span class="one"@click="showManagerPerson"></span>总经理部
-                <ul class="manager">
-                  <li><span></span>总经理</li>
-                  <li><span></span>党委书记</li>
-                  <li><span></span>副总经理</li>
-                </ul>
-              </li>
-              <li><span></span>综合办公室</li>
-              <li><span></span>人力资源部</li>
-              <li><span></span>财务部</li>
-              <li><span></span>项目管理部</li>
-            </ul>
-          </li>
+        <label>所属机构</label><input type="text" class="affiliation" v-model="chooseMsg.depart"><span class="show_orga" @click="showOrga"><img src="../../assets/images/downArrow.jpg"></span>
+        <ul class="organization" v-show="agency">
+          <!--<li class="company">-->
+            <!--<span @click="packUp" class="companyName"></span>深圳易网时代信息技术有限公司-->
+            <!--<ul class="department">-->
+              <!--<li >-->
+                <!--<span class="one"@click="showManagerPerson"></span>总经理部-->
+                <!--<ul class="manager">-->
+                  <!--<li><span></span>总经理</li>-->
+                  <!--<li><span></span>党委书记</li>-->
+                  <!--<li><span></span>副总经理</li>-->
+                <!--</ul>-->
+              <!--</li>-->
+              <!--<li><span></span>综合办公室</li>-->
+              <!--<li><span></span>人力资源部</li>-->
+              <!--<li><span></span>财务部</li>-->
+              <!--<li><span></span>项目管理部</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <li v-for="(p,index) in allDepartment" @click="choose(index)">{{p.department}}</li>
         </ul>
       </div>
 
       <div style="margin-top: 10px" class="product_name">
-        <label>商家日期</label><input type="text"><span><img src="../../assets/images/calendar.jpg"></span>
+        <label>商家日期</label><input type="text" v-model="chooseMsg.date"><span><img src="../../assets/images/calendar.jpg"></span>
       </div>
       <div style="margin-top: 10px" class="product_name">
-        <label>规格型号</label><input type="text" v-model="asd"><span @click="showStyle"><img src="../../assets/images/downArrow.jpg"></span>
+        <label>规格型号</label><input type="text" v-model="chooseMsg.asd"><span @click="showStyle"><img src="../../assets/images/downArrow.jpg"></span>
         <ul class="style" v-show="sizeStyle">
             <li v-for="(n,index) in specifications" @click="check(index)">{{n.title}}</li>
         </ul>
       </div>
       <div style="margin-top: 10px" class="product_name">
-        <label>销售单价</label><input type="text" v-model="price"><span><img src="../../assets/images/upArrow.jpg" style="padding-top: 2px" @click="addPrice">
+        <label>销售单价</label><input type="text" v-model="chooseMsg.price"><span><img src="../../assets/images/upArrow.jpg" style="padding-top: 2px" @click="addPrice">
       <img src="../../assets/images/downArrow.jpg" @click="reducePrice"></span>
       </div>
       <!--<div style="margin-top: 10px" class="product_name thumbnail">-->
         <!--<label>产品缩略图</label><input type="text"><span><img src="../../assets/images/upload.jpg" style="float: left;padding-left:5px">上传图片</span>-->
       <!--</div>-->
       <div class="note_infor">
-        <label>备注信息</label><input type="text" name="desc">
+        <label>备注信息</label><input type="text" name="desc" v-model="chooseMsg.annotation">
       </div>
     </form>
+    <!--{{num}}-->
   </div>
+
 </template>
 
 <script>
+  import {mapGetters} from "vuex"
   export default {
     name: "addShadowMsgForm",
+    computed:mapGetters({
+      num:"getProduct"
+    }),
     data(){
       return{
+        agency:false,
         sizeStyle:false,
-        asd:"",
-        price:"",
+        chooseMsg:{},
+        // asd:"",
+        // price:"",
+        // depart:"",
         specifications:[
           {
             "title":"KC-W200SW"
@@ -67,6 +77,17 @@
           },
           {
             "title":"银灰色BCD-339WBA 339"
+          }
+        ],
+        allDepartment:[
+          {
+            "department":"总经理部"
+          },
+          {
+            "department":"人力资源部"
+          },
+          {
+            "department":"财务部"
           }
         ]
       }
@@ -79,10 +100,10 @@
         this.sizeStyle=!this.sizeStyle
       },
       addPrice(){
-        this.price++;
+        this.chooseMsg.price++;
       },
       reducePrice(){
-        this.price--;
+        this.chooseMsg.price--;
       },
       showManagerPerson(){
         $(".one").toggleClass("add").parent().children(".manager").toggle(300);
@@ -92,7 +113,12 @@
         console.log($(".company").children(".department"));
       },
       check(index){
-        this.asd=this.specifications[index].title;
+        this.chooseMsg.asd=this.specifications[index].title;
+        this.sizeStyle=!this.sizeStyle
+      },
+      choose(index){
+        this.chooseMsg.depart=this.allDepartment[index].department;
+        this.agency=!this.agency
       }
     }
   }
@@ -135,7 +161,10 @@
           border-top:none;
           li{
             padding:5px 0;
-            /*padding-left: 10px;*/
+            border-bottom:1px dotted #ccc;
+            &:hover{
+              background:#ccc;
+            }
           }
           .company{
             list-style-position: inside;

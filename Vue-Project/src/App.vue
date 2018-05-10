@@ -7,7 +7,8 @@
 <script>
 import "./assets/css/iconfont.css";
 export default {
-  name: 'App'
+  name: 'App',
+  
 }
 </script>
 

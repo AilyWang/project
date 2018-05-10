@@ -1,15 +1,21 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import DepartmentManagement from '../pages/InstantChat/DepartmentManagement';
+import UserManagement from '../pages/InstantChat/UserManagement';
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/DepartmentManagement',
+      name: 'DepartmentManagement',
+      component: DepartmentManagement
+    },
+    {
+      path: '/UserManagement',
+      name: 'UserManagement',
+      component: UserManagement
     }
   ]
 })

@@ -1,4 +1,4 @@
-import {productDataURL} from "../ajaxUrl/ApiUrl"
+import {productDataURL} from "../URL/ApiUrl"
 
 export default class ProductApi{
   static getProductData(cb){

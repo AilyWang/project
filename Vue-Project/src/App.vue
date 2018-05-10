@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-=======
     <!--<img src="./assets/logo.png">-->
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import "./assets/css/iconfont.css";
-=======
   import "./assets/css/iconfont.css"
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 export default {
   name: 'App',
   
@@ -21,12 +15,7 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   @import "./assets/css/iconfont.css";
-=======
-=======
   *{
     margin:0;
     padding:0;
@@ -43,7 +32,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
->>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
     
     *{
         box-sizing: border-box;
@@ -77,8 +65,6 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     }
->>>>>>> 11f8de274f94a3c9c2300c230f6bb25dbaafaae0
-=======
 
   *{
     box-sizing: border-box;
@@ -114,5 +100,4 @@ export default {
   /*color: #2c3e50;*/
   /*margin-top: 60px;*/
 /*}*/
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 </style>

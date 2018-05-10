@@ -1,9 +1,6 @@
 <template>
-    <div class="header">
-<<<<<<< HEAD
+     <div class="header">
         <!-- 社区服务 -->
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
         <div class="header_l">
             <table>
                 <tbody>
@@ -12,18 +9,13 @@
                             <span><i class="iconfont icon-envira"></i></span>
                             EMIS快速开发平台
                         </td>
-<<<<<<< HEAD
                         <td class="header_back" @click='showMenu()'>
-=======
-                        <td class="header_back">
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
                             <a href="javascript:;" class="l_btn_text"><i class="iconfont icon-chevron-circle-left"></i></a>
                         </td>
                         <td>
                             <table>
                                 <tbody>
                                     <tr>
-<<<<<<< HEAD
                                         <td @click='setIdx(i)' class="header_td_bd " v-for='(a,i) in aboutAside'>
                                                 <!-- {{i}} -->
                                             <a href="javascript:;" class="l_btn_text header_btn">
@@ -32,38 +24,6 @@
                                             </a>
                                         </td>
                                      
-=======
-                                        <td class="header_td_bd header_td_bg">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-shezhi"></i></p>
-                                                <p>平台设置</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-edge"></i></p>
-                                                <p>门户网站</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-group"></i></p>
-                                                <p>协同办公</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-xing-square"></i></p>
-                                                <p>流程中心</p>
-                                            </a>
-                                        </td>
-                                        <td class="header_td_bd">
-                                            <a href="javascript:;" class="l_btn_text header_btn">
-                                                <p><i class="iconfont icon-wechat"></i></p>
-                                                <p>即时聊天</p>
-                                            </a>
-                                        </td>
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
                                     </tr>
                                 </tbody>
                             </table>
@@ -72,11 +32,8 @@
                 </tbody>
             </table>
         </div>
-<<<<<<< HEAD
         <!-- 社区服务END -->
         <!-- 用户设置 -->
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
         <div class="header_r">
             <a href="javascript:;" class="l_btn_text">
                 <span><i class="iconfont icon-user hd_set"></i></span>
@@ -107,7 +64,6 @@
                 </div>
             </a>
             <span class="header_coll"></span>
-<<<<<<< HEAD
             <a href="javascript:;" class="l_btn_text l_user_set theme_hov">
                 <span><i class="iconfont icon-tree hd_set"></i></span>
                 <span>主题</span>
@@ -120,22 +76,12 @@
                             {{x.cont}}
                         </head-color>
                     </span>
-=======
-            <a href="javascript:;" class="l_btn_text l_user_set">
-                <span><i class="iconfont icon-tree hd_set"></i></span>
-                <span>主题</span>
-                <span class="header_dropdown"></span>
-                <span class="header_theme_options">
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
                     <!-- 这是主题的垂直滑动条 -->
                     <span class="theme_croll">
                         <span class="theme_croll_cont"></span>
                     </span>
                 </span>
-<<<<<<< HEAD
                 <!-- 主题选项END -->
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
             </a>
             <span class="header_coll"></span>
             <a href="javascript:;" class="l_btn_text">
@@ -144,20 +90,14 @@
                 <span class="header_dropdown"></span>
             </a>
         </div>
-<<<<<<< HEAD
         <!-- 用户设置END -->
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     </div>
 </template>
 
 <script>
-<<<<<<< HEAD
     import HeadColor from '../public/headerColor'
     import {mapGetters,mapActions} from "vuex"
     export default{
-      
-    
         name: "CommonHeader",
         data(){
             return {
@@ -276,10 +216,6 @@
                 HeadColor
         }
        
-=======
-    export default{
-        name: "CommonHeader"
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     }
 </script>
 
@@ -292,7 +228,6 @@
         text-align: center;
         font-size: 13px;
     }
-<<<<<<< HEAD
     @media screen and (max-width:1048px){
         .header_r{
             display: none;
@@ -300,8 +235,6 @@
     }
  
     /* ------ 网站资源 --------- */
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     .header .l_btn_text{
         display: inline-block;
         color: #fff;
@@ -315,7 +248,6 @@
         border-right: 1px #367fa9 solid;
     }
     .header_td_bd:hover{
-<<<<<<< HEAD
         background: rgba(255,0,0,.6);
         background: rgb(0, 150, 136);
         
@@ -323,22 +255,17 @@
     .header_td_bg{
         background: rgba(255,0,0,.6);
         background: rgb(0, 150, 136);
-=======
         background: #367fa9;
     }
     .header_td_bg{
         background: #367fa9;
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     }
     .header_quick{
         background: #367fa9;
         padding: 0 5px;
         font-size: 20px;
-<<<<<<< HEAD
         font-weight: 900;
-=======
         font-weight: 600;
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
         padding: 0 15px 0 10px;
     }
     .header_back{
@@ -352,12 +279,9 @@
         margin: 0 5px;
         height: 40px;
     }
-<<<<<<< HEAD
 
 
     /* ---------- 用户操作 ---------- */
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     .header_r{
         float: right;
         padding-right: 10px;
@@ -379,11 +303,8 @@
         margin-bottom: -3px;
     }
     .header_r .l_btn_text:hover{
-<<<<<<< HEAD
         background: rgba(255, 255, 255, .8)
-=======
-        background: rgba(255, 255, 255, .4)
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
+        /*background: rgba(255, 255, 255, .4)*/
     }
     .header_coll{
         display: inline-block;
@@ -415,10 +336,7 @@
         font-size: 16px;
     }
     .header_set_options{
-<<<<<<< HEAD
         display: none;
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
         position: absolute;
         left: 0;
         width: 120px;
@@ -429,7 +347,6 @@
         box-shadow: 2px 2px 5px #ccc;
         position: absolute;
         left: 0;
-<<<<<<< HEAD
         top: 100%;
         font-size: 12px;
     }
@@ -437,9 +354,6 @@
         display: block;
     }
     /* ----------设置选项 --------------- */
-=======
-    }
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     .setting_l{
         width: 25%;
         height: 100%;
@@ -496,7 +410,6 @@
     .icon-icinfocircle,.icon-key{
         font-size: 16px;
     }
-<<<<<<< HEAD
     .theme_hov:hover .header_theme_options{
         display: block;
     }
@@ -534,6 +447,4 @@
         vertical-align: top;
     }
    
-=======
->>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 </style>

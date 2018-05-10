@@ -1,17 +1,17 @@
 <template>
     <div class="home_page_section">
         <div class="home_page_section_cont">
-            <system-navigation></system-navigation>
+            <!-- <system-navigation></system-navigation> -->
             <system-content></system-content>
         </div>
     </div>
 </template>
 <script>
-    import SystemNavigation from "./systemnavigation"
+    // import SystemNavigation from "./systemnavigation"
     import SystemContent from "./systemcontent"
     export default {
         components:{
-            SystemNavigation,
+            // SystemNavigation,
             SystemContent
         }
     }

@@ -139,19 +139,12 @@ export default {
 </script>
 
 <style>
-  <!-- 引入样式 -->
-  html,body{
-    height: 100%;
-  }
-  body{
-    display: flex;
-  }
+ 
   .box_section{
     width:750px;
     height:100%;
     padding-left:220px;
     padding-top:90px;
-    flex:1;
   }
   .btn_left{
     padding:10px 4px;

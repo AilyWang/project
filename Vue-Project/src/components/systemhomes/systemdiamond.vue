@@ -68,7 +68,22 @@
 .diamond_icon{
     font-size: 42px;
     color: #fff;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    transition: all .5s;
 }
+.span_icon{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    position: relative;
+}
+.diamond_icon:hover{
+    transform: rotateZ(360deg);
+}
+
 .diamond_num{
     display: block;
     font-size: 26px;

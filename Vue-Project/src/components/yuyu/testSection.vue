@@ -28,24 +28,39 @@
                 <i class="icon iconfont icon-close"></i>
   			</a>
   			<a href='#'  class="win-fullscreen" @click='changeView()'>
-                <i class="icon iconfont icon-eye"></i>
+                <i class="icon iconfont icon-desktop"></i>
   			</a>
   		</div>
         <a href="#" class="click_next" @click='click_next()'>
             <i class="icon iconfont icon-next"></i>
       </a>
   	</nav>
-  	<section class="test_section_content">
-      <!-- <div class="tab-card"><iframe src="http://demo.topjui.com/html/portal/index.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-       <!-- <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-      <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-  	</section>
+    <section class="test_section_content">
+        <div class="tab-card " >
+          <system></system>
+        </div>
+        <div class="tab-card " >
+          <source-manage></source-manage>
+        </div>
+        <div class="tab-card " >
+          <user-management></user-management>
+        </div>
+        <div class="tab-card " >
+          <department-management></department-management>
+        </div>
+     <!--    <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/bar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+      <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
+    </section>
   </section>
 </template>
 <script>
-import {mapGetters,mapActions} from "vuex"
+  import sourceManage from '../qiao/sourceManage'
+  import system from '../systemhomes/systemsection'
+  import UserManagement from '../../pages/InstantChat/UserManagement';
+  import DepartmentManagement from '../../pages/InstantChat/DepartmentManagement'
+  import {mapGetters,mapActions} from "vuex"
   export default {
       name: 'testSection',
       data(){
@@ -53,11 +68,18 @@ import {mapGetters,mapActions} from "vuex"
           isFull:true,
            tabsName: [],  
             active: false ,
+            isActive: true ,
             ulLeftNum : 0,
             countWidth:0,
             allLiWidth : 0
           }
 
+      },
+      components:{
+        sourceManage,
+        system,
+        DepartmentManagement,
+        UserManagement
       },
       computed:mapGetters({
             tab:"getTab"
@@ -166,9 +188,9 @@ import {mapGetters,mapActions} from "vuex"
  .test_section{
     flex:1;
     display:flex;
+   flex-direction:column;
     background: #eee;
    overflow: hidden;
-   flex-direction:column;
     .test_section_nav{
         font-size:12px;
         background:rgb(243,243,243);

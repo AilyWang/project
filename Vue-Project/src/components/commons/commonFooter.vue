@@ -20,6 +20,7 @@
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 @media screen and (min-width:640px){
         .footer,.foot_flex,.foot_firm{
             overflow: hidden;
@@ -32,13 +33,22 @@
     left: 0;
     bottom: 0;*/
 >>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
+=======
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+>>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     width: 100%;
     background: #fff;
     border-top: 1px solid #d3d3d3;
     color: #000;
     font-size: 12px;
     padding: 7px 5px;
+<<<<<<< HEAD
     z-index: 12;
+=======
+>>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 }
 .foot_flex{
     display: flex;

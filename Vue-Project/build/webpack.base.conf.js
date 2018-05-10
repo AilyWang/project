@@ -3,8 +3,12 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+<<<<<<< HEAD
 var webpack = require('webpack')
 
+=======
+var webpack = require("webpack")
+>>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -65,6 +69,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },

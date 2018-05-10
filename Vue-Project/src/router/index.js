@@ -2,8 +2,23 @@ import Vue from 'vue';
 import Router from 'vue-router'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import DepartmentManagement from '../pages/InstantChat/DepartmentManagement';
 import UserManagement from '../pages/InstantChat/UserManagement';
+=======
+// import HelloWorld from '@/components/HelloWorld'
+import publickPage from '@/pages/publicpage/publickPage'
+import sourceManage from '@/components/qiao/sourceManage'
+import addShadow from '@/components/qiao/addShadow'
+import addShadowOptionalMsg from '@/components/qiao/addShadowOptionalMsg'
+import addShadowMsgForm from '@/components/qiao/addShadowMsgForm'
+import operateTip from '@/components/qiao/operateTip'
+import mustInformation from '@/components/qiao/mustInformation'
+import choiceInformation from '@/components/qiao/choiceInformation'
+import checkProductMsg from '@/components/qiao/checkProductMsg'
+
+
+>>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
 
 =======
 import SystemHomepage from "@/pages/systemhome/systemhomepage";
@@ -19,6 +34,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       path: '/DepartmentManagement',
@@ -58,6 +74,51 @@ export default new Router({
       name: 'index',
       component: Index
 >>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
+=======
+      path: '/sourceManage',
+      name: 'sourceManage',
+      component: sourceManage
+    },
+    {
+      path: '/publickPage',
+      name: 'publickPage',
+      component: publickPage
+    },
+    {
+      path: '/addShadowOptionalMsg',
+      name: 'addShadowOptionalMsg',
+      component: addShadowOptionalMsg
+    },
+    {
+      path: '/addShadow',
+      name: 'addShadow',
+      component: addShadow
+    },
+    {
+      path: '/operateTip',
+      name: 'operateTip',
+      component: operateTip
+    },
+    {
+      path: '/mustInformation',
+      name: 'mustInformation',
+      component: mustInformation
+    },
+    {
+      path: '/choiceInformation',
+      name: 'choiceInformation',
+      component: choiceInformation
+    },
+    {
+      path: '/addShadowMsgForm',
+      name: 'addShadowMsgForm',
+      component: addShadowMsgForm
+    },
+    {
+      path: '/checkProductMsg',
+      name: 'checkProductMsg',
+      component: checkProductMsg
+>>>>>>> 3e2bb6c58159282d04475c3d14e5cda734371f63
     }
   ]
 });

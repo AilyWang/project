@@ -1,167 +1,93 @@
 <template>
     <div class="aside">
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-shezhi setting_label"></i>
-                </div>
-                <div class="panel_setting_text">系统设置</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-cube"></i></span>
-                        <span class="panel_cf">基础配置</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-lifering"></i></span>
-                        <span class="panel_cf">资源管理</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-bookmark"></i></span>
-                        <span class="panel_cf">分级字典</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-file"></i></span>
-                        <span class="panel_cf">数据字典</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-link"></i></span>
-                        <span class="panel_cf">常用链接</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-refresh1"></i></span>
-                        <span class="panel_cf">初始缓存</span>
-                    </a>
-                </li>
-            </ul>
+        
+      <div class="aside_panel_setting" v-for='(e,i) in asideData'>
+        <div @click='showMeun(i)'  class="panle_setting_cont">
+          <div class="panel_setting_label">
+            <i :class="e[0].left_ico"></i>
+          </div>
+          <div class="panel_setting_text">{{e[0].tit}}</div>
+          <div class="panel_setting_dropdown">
+            <a href="javascript:;" class="setting_dp"></a>
+          </div>
         </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-user setting_label"></i>
-                </div>
-                <div class="panel_setting_text">用户管理</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-sitemap"></i></span>
-                        <span class="panel_cf">组织机构</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-user"></i></span>
-                        <span class="panel_cf">用户信息</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-user-o"></i></span>
-                        <span class="panel_cf">角色授权</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-group"></i></span>
-                        <span class="panel_cf">会员管理</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-code setting_label"></i>
-                </div>
-                <div class="panel_setting_text">代码生成</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-book"></i></span>
-                        <span class="panel_cf">生成代码</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="aside_panel_setting">
-            <div class="panle_setting_cont">
-                <div class="panel_setting_label">
-                    <i class="iconfont icon-desktop setting_label"></i>
-                </div>
-                <div class="panel_setting_text">系统监控</div>
-                <div class="panel_setting_dropdown">
-                    <a href="javascript:;" class="setting_dp"></a>
-                </div>
-            </div>
-            <ul class="panel_list">
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-list-alt"></i></span>
-                        <span class="panel_cf">操作日志</span>
-                    </a>
-                </li>
-                <li class="panel_list_li">
-                    <a href="javascript:;" class="panel_base_config">
-                        <span class="panel_cf panel_cf_label"><i class="iconfont icon-listul"></i></span>
-                        <span class="panel_cf">异常日志</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <ul class="panel_list" >
+            <common-aside-li :send="e[0].timer"></common-aside-li>
+        </ul>
+      </div>
     </div>
 </template>
-
 <script>
+    import CommonAsideLi from "./commonAsideLi"
+    import Test from '../../api/test'
+    import {mapGetters,mapActions} from "vuex"
+       
     export default{
+        components:{
+            CommonAsideLi
+        },
+        computed:mapGetters({
+            num:"getNum"
+        }),
+        created(){
+
+             Test.getAside((data)=>{
+                this.asideData = data[this.num]
+              })
+
+        },
         mounted(){
-            this.show();
+        },
+        beforeupdate(){
+        },
+        data(){
+          return {
+            asideData:[],
+            n:0
+          }
         },
         methods: {
-            show(){
-                $('.panel_setting_text').click(function(e){
-                    e.stopPropagation();
-                    $(this).parent().siblings().toggle("fast");
-                    $(this).parent().find('.panel_setting_dropdown').toggleClass("panel_setting_dropdown_active");
+            showMeun(i){
+                $($('.panle_setting_cont')[i]).siblings().toggle("slow");
+                $($('.panel_setting_dropdown')[i]).toggleClass("panel_setting_dropdown_active");
+            }
+        },
+         created(){
+            
+          Test.getAside((data)=>{
+            this.asideData = data[this.num]
+          })
+      },
+        watch:{
+            num: function (x,y){
+                console.log(x,y)
+                Test.getAside((data)=>{
+                    this.asideData = data[this.num]
                 })
-                // $(".aside_panel_setting").click(function(e){
-                //     e.stopPropagation();
-                //     console.log(1);
-                //     $(this).children().eq(0).children().eq(2).toggleClass('panel_setting_dropdown_active')
-                //     $(this).children().eq(1).toggle('fast');
-                // })
             }
         }
+        
+       
     }
 </script>
 
 <style scoped>
+  @media screen and (max-width:640px){
+        .aside{
+            display: none;
+        }
+    }
 .aside{
     width: 225px;
+<<<<<<< HEAD
     height: 100%;
     /* height: auto; */
     /* min-height: 700px; */
+=======
+    margin-right: 5px;
+    overflow: hidden;
+    height: auto;
+>>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
     background: #222d32;
     color: #fff;
     font-size: 12px;

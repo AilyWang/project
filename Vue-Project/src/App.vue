@@ -14,8 +14,27 @@ export default {
 
 <style>
 <<<<<<< HEAD
+<<<<<<< HEAD
   @import "./assets/css/iconfont.css";
 =======
+=======
+  *{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style:none;
+  }
+  html,body,#app{
+    height:100%;
+  }
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+>>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
     
     *{
         box-sizing: border-box;

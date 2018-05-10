@@ -20,7 +20,18 @@
 </script>
 
 <style scoped>
+@media screen and (min-width:640px){
+        .footer,.foot_flex,.foot_firm{
+            overflow: hidden;
+        }
+    }
 .footer{
+<<<<<<< HEAD
+=======
+   /* position: fixed;
+    left: 0;
+    bottom: 0;*/
+>>>>>>> d4764c492be8c99f6b5c83e022bda3caabe6d910
     width: 100%;
     background: #fff;
     border-top: 1px solid #d3d3d3;

@@ -12,6 +12,7 @@
                 <i :class="'icon '+T.icon"></i>
                 {{T.name}}
               <i v-if='i !== 0' class="icon iconfont icon-close"></i>
+
               </a>
           </li>
     		</ul>
@@ -265,6 +266,7 @@
     .test_section_content{
       overflow:hidden;
       flex:1;
+      overflow-y: scroll;
       .tab-card{
         height:100%;
         display:none;

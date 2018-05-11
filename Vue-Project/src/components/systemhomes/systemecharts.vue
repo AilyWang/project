@@ -4,7 +4,7 @@
             <div class="system_echart_cont">
                 <div class="system_echart_head">{{q.title}}</div>
                 <div class="system_echart_list">
-                    <ul :class="q.class" style="width: 100%;height: 418px;padding: 9px 15px;">
+                    <ul :class="q.class" style="width: 100%; height: 418px; padding: 9px 15px;">
                     </ul>
                 </div>
             </div>
@@ -40,6 +40,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
        methods:{
            watersheets(){
                 $(document).ready(function(){
+                    
                     var myChart = echarts.init(document.getElementsByClassName("system_echart_list_water")[0]);
                     var option = {
                         tooltip: {
@@ -48,7 +49,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                         legend: {
                             x: 'right', // 'center' | 'left' | {number},
                             data: ['蒸发量', '降水量']
-                        },
+                        },     
                         // toolbox: {
                         //     show: true,
                         //     feature: {
@@ -105,8 +106,12 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                             }
                         ]
                     };
-
-                    myChart.setOption(option);
+                   
+                    setInterval(() => {
+                        console.log(1)
+                        myChart.setOption(option);
+                    }, 3000)
+                    
                 })
            },
            skysheets(){
@@ -237,7 +242,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
 }
 .system_echart_box{
     width: 33.33333%;
-    float: left;
+    display: inline-block;
     padding-right: 10px;
 }
 .system_echart_box:last-child{

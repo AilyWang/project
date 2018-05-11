@@ -1,17 +1,22 @@
 <template>
   <section class="test_section">
   	<nav class='test_section_nav'>
-      <a href="#" class="click_previous" @click='click_previous()'>
+      <a href="#" class="moveClick click_previous" @click='click_previous()'>
         <i class="icon iconfont icon-previous"></i>
       </a>
       <div class='left_nav'>
     		<ul >
-          <li v-for="(tab,index) in tabsName">
 
-              <a href="#"  @click="tabsSwitch(index)" v-bind:class="{active:tab.isActive}">
+          <li  v-for="(tab,index) in tabsName">
+              <a href="#" v-if='index === tabsName.length -1' @click="tabsSwitch(index)" v-bind:class="{active:true}">
                 <i :class="'icon '+tab.icon"></i>
               {{tab.name}}
-              <i id="close" v-if='index !== 0' class="icon iconfont icon-close"></i>
+              <i   @click='closeTab(index)' v-if='index !== 0' class="icon iconfont icon-close"></i>
+              </a>
+              <a href="#" v-else  @click="tabsSwitch(index)" v-bind:class="{active:false}">
+                <i :class="'icon '+tab.icon"></i>
+              {{tab.name}}
+              <i   @click='closeTab(index)' v-if='index !== 0' class="icon iconfont icon-close"></i>
               </a>
           </li>
     		
@@ -31,16 +36,16 @@
                 <i class="icon iconfont icon-eye"></i>
   			</a>
   		</div>
-        <a href="#" class="click_next" @click='click_next()'>
+        <a href="#" class="moveClick click_next" @click='click_next()'>
             <i class="icon iconfont icon-next"></i>
       </a>
   	</nav>
   	<section class="test_section_content">
-      <!-- <div class="tab-card"><iframe src="http://demo.topjui.com/html/portal/index.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-       <!-- <div class="tab-card" style="color:red;font-size:66px;display:block;"> <iframe src="http://demo.ewsd.cn/system/portal/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
-        <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.topjui.com/html/extend/timeaxis.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-      <div class="tab-card" style="color:green;font-size:66px;"> <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <!-- <div class="tab-card" style="color:blue;font-size:66px;"><iframe src="http://demo.ewsd.cn/site/messageBook/index" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
+        <div class="tab-card " ><iframe src="http://demo.topjui.com/html/portal/index.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/bar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+      <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
   	</section>
   </section>
 </template>
@@ -50,9 +55,10 @@ import {mapGetters,mapActions} from "vuex"
       name: 'testSection',
       data(){
         return{
-          isFull:true,
-           tabsName: [],  
+            isFull:true,
+            tabsName: [],  
             active: false ,
+            isActive:false,
             ulLeftNum : 0,
             countWidth:0,
             allLiWidth : 0
@@ -63,8 +69,9 @@ import {mapGetters,mapActions} from "vuex"
             tab:"getTab"
       }),
       updated(){
+        // this.tabsName = this.$store.state.counter.tabData
           // this.tabsName = this.tab
-            console.log(this.tab)
+            // console.log(this.tab)
       },
       beforeupdated(){
 
@@ -73,6 +80,10 @@ import {mapGetters,mapActions} from "vuex"
         this.tabsName = this.$store.state.counter.tabData
       },
       methods:{
+        closeTab(i){
+          // console.log(i,$($('.left_nav .icon-close').parent().parent()[i]))
+          $($('.left_nav .icon-close').parent().parent()[i]).toggle()
+        },
         click_previous(){
             var ul = document.querySelectorAll('.left_nav ul')[0]
             var li = Array.from(ul.children);
@@ -167,9 +178,12 @@ import {mapGetters,mapActions} from "vuex"
     flex:1;
     display:flex;
     background: #eee;
-   overflow: hidden;
-   flex-direction:column;
+    overflow: hidden;
+    flex-direction:column;
     .test_section_nav{
+      .moveClick{
+        /*display:none;*/
+      }
         font-size:12px;
         background:rgb(243,243,243);
         border-bottom:1px solid #ddd;

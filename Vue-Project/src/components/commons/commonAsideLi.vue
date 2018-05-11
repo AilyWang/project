@@ -5,7 +5,6 @@
         <span class="panel_cf panel_cf_label">
           <i style="font-size:18px;" :class="t.left_ico"></i></span>
         <span class="panel_cf">{{t.tit}} </span>
-      
       </a>
     </li>
   </div>
@@ -20,9 +19,11 @@ export default {
     return {
     }
   },
+  updated(){
+    // this.senddata(this.send)
+  },
   methods:{
     senddata(value){
-      console.log(value)
       var tabDatachange = {"name":value.tit,"icon":value.left_ico, "isActive":false}
       this.$store.commit('tabDatachange',tabDatachange)
     }

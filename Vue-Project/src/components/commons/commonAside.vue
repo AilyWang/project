@@ -60,7 +60,7 @@
       },
         watch:{
             num: function (x,y){
-                console.log(x,y)
+                // console.log(x,y)
                 Test.getAside((data)=>{
                     this.asideData = data[this.num]
                 })

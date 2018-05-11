@@ -2,7 +2,7 @@
         <div class="diamond_msg_one">
             <a class="diamond_msg_one_cont">
                 <div class="diamond_msg_l" :style="'background:'+bgColor">
-                    <span><i :class="'iconfont icon-'+iconEnd+' diamond_icon'"></i></span>
+                    <span class="span_icon"><i :class="'iconfont icon-'+iconEnd+' diamond_icon'"></i></span>
                 </div>
                 <div class="diamond_msg_r">
                     <span class="diamond_num" ><slot name="num"></slot></span>

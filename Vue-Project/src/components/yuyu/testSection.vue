@@ -6,7 +6,7 @@
       </a>
       <div class='left_nav'>
     		<ul >
-          <li v-for="(tab,index) in tabsName">
+          <li v-for="(tab,index) in tabsName" :key="index">
 
               <a href="#"  @click="tabsSwitch(index)" v-bind:class="{active:tab.isActive}">
                 <i :class="'icon '+tab.icon"></i>
@@ -255,6 +255,7 @@
     .test_section_content{
       overflow:hidden;
       flex:1;
+      overflow-y: scroll;
       .tab-card{
         height:100%;
         display:none;

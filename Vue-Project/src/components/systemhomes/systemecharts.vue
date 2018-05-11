@@ -237,9 +237,8 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
 }
 .system_echart_box{
     width: 33.33333%;
-    float: left;
+    display: inline-block;
     padding-right: 10px;
-    box-sizing: border-box
 }
 .system_echart_box:last-child{
     padding-right: 0;

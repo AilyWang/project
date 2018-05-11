@@ -349,6 +349,7 @@
         left: 0;
         top: 100%;
         font-size: 12px;
+        z-index: 9999;
     }
     .l_user_set:hover .header_set_options{
         display: block;
@@ -430,6 +431,7 @@
         padding: 3px 0;
         font-size: 0;
         border: 1px solid #ccc;
+        z-index: 9999;
     }
     .theme_options_l,.theme_options_r,.theme_croll,.theme_options_r_cont{
         display: inline-block;

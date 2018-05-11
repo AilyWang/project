@@ -11,7 +11,7 @@
               <a  href="#"    >
                 <i :class="'icon '+T.icon"></i>
                 {{T.name}}
-              <i v-if='i !== 0' class="icon iconfont icon-close"></i>
+              <i @click='closeClose' v-if='i !== 0' class="icon iconfont icon-close "></i>
 
               </a>
           </li>
@@ -37,18 +37,6 @@
   	</nav>
     <section class="test_section_content">
       <div :is='test_component_name'></div>
-       <!--  <div class="tab-card " >
-          <system></system>
-        </div>
-        <div class="tab-card " >
-          <source-manage></source-manage>
-        </div> -->
-       <!--  <div class="tab-card " >
-          <user-management></user-management>
-        </div>
-        <div class="tab-card " >
-          <department-management></department-management>
-        </div> -->
     </section>
   </section>
 </template>
@@ -57,6 +45,10 @@
   import system from '../systemhomes/systemsection'
   import UserManagement from '../../pages/InstantChat/UserManagement';
   import DepartmentManagement from '../../pages/InstantChat/DepartmentManagement'
+  import Radar from "./moreChart/radar"
+  import Pie from "./moreChart/pie"
+  import Histgram from "./moreChart/histgram"
+  import BrokenLine from "./moreChart/brokenLine"
   import {mapGetters,mapActions} from "vuex"
   export default {
       name: 'testSection',
@@ -75,7 +67,11 @@
         sourceManage,
         system,
         DepartmentManagement,
-        UserManagement
+        UserManagement,
+        Radar,
+        Pie,
+        Histgram,
+        BrokenLine
       },
       computed:mapGetters({
             tab:"getTab"
@@ -89,6 +85,9 @@
         // this.tabsName = this.$store.state.counter.tabData
       },
       methods:{
+        closeClose(){
+
+        },
         closeTab(i){
           // console.log(i,$($('.left_nav .icon-close').parent().parent()[i]))
           // $($('.left_nav .icon-close').parent().parent()[i]).toggle()
@@ -129,6 +128,14 @@
             this.test_component_name = 'DepartmentManagement'
           }else if(i === 3){
             this.test_component_name = 'UserManagement'
+          }else if(i === 4){
+            this.test_component_name = "BrokenLine"
+          }else if(i === 5){
+            this.test_component_name = "Histgram"
+          }else if(i === 6){
+            this.test_component_name = "Pie"
+          }else if(i === 7){
+            this.test_component_name = "Radar"
           }
         },
         // 刷新

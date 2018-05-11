@@ -11,6 +11,7 @@
             <a href="javascript:;" class="setting_dp"></a>
           </div>
         </div>
+        {{num}}
         <ul class="panel_list" >
             <common-aside-li :send="e[0].timer"></common-aside-li>
         </ul>
@@ -94,6 +95,7 @@
     font-size: 16px;
 }
 .aside_panel_setting{
+    color: #fff;
     width: 223px;
 }
 .panle_setting_cont{

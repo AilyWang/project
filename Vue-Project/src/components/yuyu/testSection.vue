@@ -6,20 +6,14 @@
       </a>
       <div class='left_nav'>
     		<ul >
-
-          <li  v-for="(tab,index) in tabsName">
-              <a href="#" v-if='index === tabsName.length -1' @click="tabsSwitch(index)" v-bind:class="{active:true}">
-                <i :class="'icon '+tab.icon"></i>
-              {{tab.name}}
-              <i   @click='closeTab(index)' v-if='index !== 0' class="icon iconfont icon-close"></i>
-              </a>
-              <a href="#" v-else  @click="tabsSwitch(index)" v-bind:class="{active:false}">
-                <i :class="'icon '+tab.icon"></i>
-              {{tab.name}}
-              <i   @click='closeTab(index)' v-if='index !== 0' class="icon iconfont icon-close"></i>
+          <li calss='Click_Zzz' @click="changeTab(i)" v-for="(T,i) in tab">
+            <!-- :class="{active:T.isActive}" 点击样式 -->
+              <a  href="#"    >
+                <i :class="'icon '+T.icon"></i>
+                {{T.name}}
+              <i v-if='i !== 0' class="icon iconfont icon-close"></i>
               </a>
           </li>
-    		
     		</ul>
       </div>
   		<div class='right_btn'>
@@ -40,30 +34,12 @@
             <i class="icon iconfont icon-next"></i>
       </a>
   	</nav>
-  	<!-- <section class="test_section_content">
-        <div class="tab-card " ><iframe src="http://demo.topjui.com/html/portal/index.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/bar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-      <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-  	</section> -->
     <section class="test_section_content">
-        <div class="tab-card " >
-          <system></system>
-        </div>
-        <div class="tab-card " >
-          <source-manage></source-manage>
-        </div>
-       <!--  <div class="tab-card " >
-          <user-management></user-management>
-        </div>
-        <div class="tab-card " >
-          <department-management></department-management>
-        </div> -->
-     <!--    <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+      <div :is='test_component_name'></div>
+       <!--  <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
         <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/bar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-      <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
-        <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
+        <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+          <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->
     </section>
   </section>
 </template>
@@ -77,14 +53,12 @@
       name: 'testSection',
       data(){
         return{
-            isFull:true,
+            isClick:true,
             tabsName: [],  
-            active: false ,
-            // isActive:false,
-            isActive: true ,
             ulLeftNum : 0,
             countWidth:0,
-            allLiWidth : 0
+            allLiWidth : 0,
+            test_component_name:'system'
           }
 
       },
@@ -98,20 +72,18 @@
             tab:"getTab"
       }),
       updated(){
-        // this.tabsName = this.$store.state.counter.tabData
-          // this.tabsName = this.tab
-            // console.log(this.tab)
       },
       beforeupdated(){
 
       },
       mounted(){
-        this.tabsName = this.$store.state.counter.tabData
+        // this.tabsName = this.$store.state.counter.tabData
       },
       methods:{
         closeTab(i){
           // console.log(i,$($('.left_nav .icon-close').parent().parent()[i]))
-          $($('.left_nav .icon-close').parent().parent()[i]).toggle()
+          // $($('.left_nav .icon-close').parent().parent()[i]).toggle()
+          // console.log(i)
         },
         click_previous(){
             var ul = document.querySelectorAll('.left_nav ul')[0]
@@ -139,16 +111,17 @@
               ul.style.left = -(this.allLiWidth - left_nav_width) + 'px';
           }
         },
-        tabsSwitch(tabIndex) {  
-            var tabCardCollection = document.querySelectorAll(".tab-card"),  
-                len = tabCardCollection.length;  
-            for(var i = 0; i < len; i++) {  
-                tabCardCollection[i].style.display = "none";  
-                this.tabsName[i].isActive = false;  
-            }  
-            this.tabsName[tabIndex].isActive = true;  
-            tabCardCollection[tabIndex].style.display = "block";  
-        }  ,
+        changeTab(i){
+          if(i === 0){
+            this.test_component_name = 'system'
+          }else if(i === 1){
+            this.test_component_name = 'sourceManage'
+          }else if(i === 2){
+            this.test_component_name = 'DepartmentManagement'
+          }else if(i === 3){
+            this.test_component_name = 'UserManagement'
+          }
+        },
         // 刷新
         changeData(){
             $.get("Reboot.run", function (result) {
@@ -197,8 +170,14 @@
 	                wscript.SendKeys("{F11}");
 	            }
 	        }
-    	}
-    },
+    	 }
+      },
+      watch:{
+          tabsName: function (x,y){
+              console.log(x,y)
+            
+          }
+      }
 
   }
 </script>

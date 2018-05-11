@@ -35,8 +35,24 @@
       </a>
   	</nav>
     <section class="test_section_content">
+<<<<<<< HEAD
       <div :is='test_component_name'></div>
        <!--  <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+=======
+        <div class="tab-card " >
+          <system></system>
+        </div>
+        <div class="tab-card " >
+          <source-manage></source-manage>
+        </div>
+       <!--  <div class="tab-card " >
+          <user-management></user-management>
+        </div>
+        <div class="tab-card " >
+          <department-management></department-management>
+        </div> -->
+     <!--    <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/line.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
+>>>>>>> 9d437d5e59a16710545c9f547ad4e66992a8a4b0
         <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/bar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
         <div class="tab-card" > <iframe src="http://demo.topjui.com/html/echarts/pie.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div>
           <div class="tab-card" ><iframe src="http://demo.topjui.com/html/echarts/radar.html" scrolling="auto" frameborder="0" style="width:100%;height:100%;"></iframe></div> -->

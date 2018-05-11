@@ -1,18 +1,44 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import DepartmentManagement from '../pages/InstantChat/DepartmentManagement';
+import UserManagement from '../pages/InstantChat/UserManagement';
+import SystemModule from "@/components/systemhomes/systemmoddle/systemmodule";
+import LoginBg from "@/pages/login/login";
+import ForeGround from "@/pages/foreground/foreground";
 import Index from '@/pages/index'
 Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:"/",
-      redirect:"/index"
+      path: '/DepartmentManagement',
+      name: 'DepartmentManagement',
+      component: DepartmentManagement
     },
     {
-      path: '/index',
+      path: '/UserManagement',
+      name: 'UserManagement',
+      component: UserManagement
+    },
+    {
+      path: "/system",
+      name: "SystemModule",
+      component: SystemModule
+    },
+    {
+      path: "/login",
+      name: "LoginBg",
+      component: LoginBg
+    },
+    {
+      path: "/foreground",
+      name: "ForeGround",
+      component: ForeGround
+    },
+    {
+      path: '/',
       name: 'index',
       component: Index
     }
+   
   ]
 });

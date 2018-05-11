@@ -1,4 +1,3 @@
-
 export default {
     state:{
         num:0,
@@ -15,8 +14,13 @@ export default {
         //     state.num = args
         //     state.tabData = args
         //     // console.log(state.num)
+        "inc":(state,args)=>{
+            // console.log(args )
+            state.num = args
+            // state.tabData = args
+            // console.log(state.num)
 
-        // },
+        },
         "tabDatachange":(state, amount)=>{
             if(state.tabData.indexOf(amount)==-1){
                 state.tabData.push(amount) 

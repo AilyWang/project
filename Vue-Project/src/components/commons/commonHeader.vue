@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+     <div class="header">
         <!-- 社区服务 -->
         <div class="header_l">
             <table>
@@ -98,8 +98,6 @@
     import HeadColor from '../public/headerColor'
     import {mapGetters,mapActions} from "vuex"
     export default{
-      
-    
         name: "CommonHeader",
         data(){
             return {
@@ -256,12 +254,17 @@
     .header_td_bg{
         background: rgba(255,0,0,.6);
         background: rgb(0, 150, 136);
+        background: #367fa9;
+    }
+    .header_td_bg{
+        background: #367fa9;
     }
     .header_quick{
         background: #367fa9;
         padding: 0 5px;
         font-size: 20px;
         font-weight: 900;
+        font-weight: 600;
         padding: 0 15px 0 10px;
     }
     .header_back{
@@ -300,6 +303,7 @@
     }
     .header_r .l_btn_text:hover{
         background: rgba(255, 255, 255, .8)
+        /*background: rgba(255, 255, 255, .4)*/
     }
     .header_coll{
         display: inline-block;

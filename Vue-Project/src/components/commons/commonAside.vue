@@ -68,6 +68,9 @@
         }
         
        
+     
+
+        
     }
 </script>
 
@@ -79,12 +82,13 @@
     }
 .aside{
     width: 225px;
+    height: 100%;
+    /* height: auto; */
+    /* min-height: 700px; */
     margin-right: 5px;
     overflow: hidden;
     height: auto;
     background: #222d32;
-    color: #fff;
-    font-size: 12px;
 }
 .aside .iconfont{
     font-size: 16px;
@@ -119,6 +123,7 @@
 .panel_setting_dropdown{
     width: 16px;
     height: 16px;
+    background: url(../../assets/images/accordion_arrows2.png) no-repeat -16px 0;
     position: absolute;
     right: 5px;
     margin-top: -8px;
@@ -162,6 +167,9 @@
 }
 .icon-cube{
     font-size: 16px;
+    color: #fff;
+}
+.panel_setting_text,i{
     color: #fff;
 }
 </style>

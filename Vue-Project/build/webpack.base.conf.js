@@ -5,6 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 var webpack = require('webpack')
 
+var webpack = require("webpack")
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -65,6 +66,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },

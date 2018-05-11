@@ -1,7 +1,7 @@
 <template>
    <div class="section_left">
-     <table class="tab_top_" border="1" cellspacing="0" cellpadding="0">
-         <tr class="tr_top">
+     <table class="tab_top_mis" border="1" cellspacing="0" cellpadding="0">
+         <tr class="tr_top_to">
            <td><input type="checkbox"></td>
            <td>机构名称</td>
          </tr>
@@ -123,26 +123,25 @@
 
 <style>
   body{
-    position: relative;
     overflow-y:hidden ;
     background: #efefef;
   }
   .section_left{
     position: absolute;
-    left: 225px;
-    top:90px;
+    left: 245px;
+    top:40px;
     background: white;
     height:560px;
     overflow-y:scroll;
+    overflow-x: hidden;
   }
   .section_bottom{
-    height: 1000px;
+    height: 967px;
     width:235px;
     overflow-x: hidden;
     overflow-y: hidden;
-
   }
-  .tab_top_{
+  .tab_top_mis{
     border-color:#dddddd;
     border-collapse:collapse;
     position:fixed;
@@ -150,14 +149,14 @@
     background: white;
     z-index:999;
   }
-  .tab_top_ tr td{
+  .tab_top_mis tr td{
     border-right:1px dashed #dddddd;
     padding:10px 10px;
     text-align: center;
     font-size: 12px;
     font-weight: 600;
   }
-  .tab_top_ tr td:nth-child(2){
+  .tab_top_mis tr td:nth-child(2){
     padding:10px 64px;
   }
   .tab_bottom{
@@ -175,7 +174,7 @@
   .tab_bottom tr td:nth-child(2){
     padding:10px 40px;
   }
-  .tab_top tr:hover{
+  .tab_top_to tr:hover{
     background: #e7eaec;
   }
   .tab_bottom tr:hover{

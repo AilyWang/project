@@ -14,7 +14,7 @@
               <i id="close" v-if='index !== 0' class="icon iconfont icon-close"></i>
               </a>
           </li>
-    		
+
     		</ul>
       </div>
   		<div class='right_btn'>
@@ -66,7 +66,7 @@
       data(){
         return{
           isFull:true,
-           tabsName: [],  
+           tabsName: [],
             active: false ,
             isActive: true ,
             ulLeftNum : 0,
@@ -121,15 +121,15 @@
               ul.style.left = -(this.allLiWidth - left_nav_width) + 'px';
           }
         },
-        tabsSwitch(tabIndex) {  
-            var tabCardCollection = document.querySelectorAll(".tab-card"),  
-                len = tabCardCollection.length;  
-            for(var i = 0; i < len; i++) {  
-                tabCardCollection[i].style.display = "none";  
-                this.tabsName[i].isActive = false;  
-            }  
-            this.tabsName[tabIndex].isActive = true;  
-            tabCardCollection[tabIndex].style.display = "block";  
+        tabsSwitch(tabIndex) {
+            var tabCardCollection = document.querySelectorAll(".tab-card"),
+                len = tabCardCollection.length;
+            for(var i = 0; i < len; i++) {
+                tabCardCollection[i].style.display = "none";
+                this.tabsName[i].isActive = false;
+            }
+            this.tabsName[tabIndex].isActive = true;
+            tabCardCollection[tabIndex].style.display = "block";
         }  ,
         // 刷新
         changeData(){
@@ -255,6 +255,7 @@
     .test_section_content{
       overflow:hidden;
       flex:1;
+      overflow-y:scroll;
       .tab-card{
         height:100%;
         display:none;
@@ -262,7 +263,7 @@
         display:none;
       }
       }
-     
+
     }
 }
 </style>

@@ -40,6 +40,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
        methods:{
            watersheets(){
                 $(document).ready(function(){
+                    
                     var myChart = echarts.init(document.getElementsByClassName("system_echart_list_water")[0]);
                     var option = {
                         tooltip: {
@@ -48,7 +49,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                         legend: {
                             x: 'right', // 'center' | 'left' | {number},
                             data: ['蒸发量', '降水量']
-                        },
+                        },     
                         // toolbox: {
                         //     show: true,
                         //     feature: {
@@ -105,8 +106,12 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                             }
                         ]
                     };
-
-                    myChart.setOption(option);
+                   
+                    setInterval(() => {
+                        console.log(1)
+                        myChart.setOption(option);
+                    }, 3000)
+                    
                 })
            },
            skysheets(){

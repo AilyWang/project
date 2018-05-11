@@ -6,17 +6,18 @@ import SystemModule from "@/components/systemhomes/systemmoddle/systemmodule";
 import LoginBg from "@/pages/login/login";
 import ForeGround from "@/pages/foreground/foreground";
 import Index from '@/pages/index'
+import Endex from '@/components/systemhomes/systemecharts'
 Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/DepartmentManagement',
-      name: 'DepartmentManagement',
+      path: "/DepartmentManagement",
+      name: "DepartmentManagement",
       component: DepartmentManagement
     },
     {
-      path: '/UserManagement',
-      name: 'UserManagement',
+      path: "/UserManagement",
+      name: "UserManagement",
       component: UserManagement
     },
     {
@@ -35,10 +36,14 @@ export default new Router({
       component: ForeGround
     },
     {
-      path: '/',
-      name: 'index',
+      path: "/",
+      name: "index",
       component: Index
+    },
+    {
+      path: "/endex",
+      name: "Endex",
+      component: Endex
     }
-   
   ]
 });

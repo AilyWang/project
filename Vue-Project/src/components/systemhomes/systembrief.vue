@@ -30,6 +30,7 @@
     padding: 15px;
     margin-top: 10px;
     background: #f2f2f2;
+    text-align: left;
 }
 .system_brief_p{
     padding: 5px;

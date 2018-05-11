@@ -49,6 +49,7 @@
   import Pie from "./moreChart/pie"
   import Histgram from "./moreChart/histgram"
   import BrokenLine from "./moreChart/brokenLine"
+  import TestTest from "./moreChart/TestTest"
   import {mapGetters,mapActions} from "vuex"
   export default {
       name: 'testSection',
@@ -71,7 +72,8 @@
         Radar,
         Pie,
         Histgram,
-        BrokenLine
+        BrokenLine,
+        TestTest
       },
       computed:mapGetters({
             tab:"getTab"

@@ -15,6 +15,7 @@
 
               </a>
           </li>
+
     		</ul>
       </div>
   		<div class='right_btn'>
@@ -57,6 +58,10 @@
         return{
             isClick:true,
             tabsName: [],  
+          isFull:true,
+           tabsName: [],
+            active: false ,
+            isActive: true ,
             ulLeftNum : 0,
             countWidth:0,
             allLiWidth : 0,
@@ -140,6 +145,16 @@
             this.test_component_name = "Radar"
           }
         },
+        tabsSwitch(tabIndex) {
+            var tabCardCollection = document.querySelectorAll(".tab-card"),
+                len = tabCardCollection.length;
+            for(var i = 0; i < len; i++) {
+                tabCardCollection[i].style.display = "none";
+                this.tabsName[i].isActive = false;
+            }
+            this.tabsName[tabIndex].isActive = true;
+            tabCardCollection[tabIndex].style.display = "block";
+        }  ,
         // 刷新
         changeData(){
             $.get("Reboot.run", function (result) {
@@ -283,7 +298,7 @@
         display:none;
       }
       }
-     
+
     }
 }
 </style>

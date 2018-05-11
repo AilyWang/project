@@ -5,7 +5,7 @@
       <span class="btn_text"  @click="dialogTableVisible = true">新增</span>
     </span>
     <el-dialog title="新增/编辑" :visible.sync="dialogTableVisible">
-      <i class="iconfont icon-navicon kang" style="position: absolute; left: 0;top: 20px;"></i>
+      <i class="iconfont icon-navicon kang" style="position: absolute; left: 10px;top: 20px;"></i>
       <el-form :label-position="labelPosition" label-width="100px">
         <el-form-item label="体系代码">
           <el-input></el-input>
@@ -40,7 +40,7 @@
       <span class="btn_text"  @click="centerDialogVisible = true">编辑</span>
     </span>
     <el-dialog title="新增/编辑" :visible.sync="centerDialogVisible">
-      <i class="iconfont icon-navicon kang" style="position: absolute; left: 0;top: 20px;"></i>
+      <i class="iconfont icon-navicon kang" style="position: absolute; left: 10px;top: 20px;"></i>
       <el-form :label-position="labelPosition" label-width="100px">
         <el-form-item label="体系代码">
           <el-input></el-input>
@@ -139,33 +139,37 @@ export default {
 </script>
 
 <style>
-   body{
-    height: 1000px;
-    overflow-y: scroll;
-   }
- 
   .box_section{
-    margin-left: 20px;
-    margin-top: 20px;
-    height: 800px;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative;
   }
   .btn_left{
     padding:10px 4px;
     background:#009688;
     border-radius:3px;
     color: white;
+    position: absolute;
+    left: 0;
+    top:-2px;
   }
   .btn_in{
     padding:10px 4px;
     background:#1e9fff;
     border-radius:3px;
     color: white;
+    position: absolute;
+    left: 60px;
+    top:-2px;
   }
   .btn_right{
     padding:10px 4px;
     background:#ff5722;
     border-radius:3px;
     color: white;
+    position: absolute;
+    left: 120px;
+    top:-2px;
   }
   .btn_left:hover{
     cursor: pointer;
@@ -179,8 +183,11 @@ export default {
   .tab_top{
     border-color:#dddddd;
     border-collapse:collapse;
-    margin-top:20px;
-    width: 700px;
+    position: absolute;
+    left: 0;
+    top:40px;
+    width: 1000px;
+    background: white;
   }
   .tab_top tr td{
     border-right:1px dashed #dddddd;

@@ -191,7 +191,7 @@
         },
         methods:{
             showMenu(){
-                $('.aside').toggle()
+                $('.aside').toggle(slow)
             },
             setIdx(i){
                 alert(i)
@@ -200,18 +200,17 @@
         computed:mapGetters({
             num:"getNum"
         }),
-        methods: mapActions({
-            setIdx:"add"
-        }),
-        // methods:{
+      
+        methods:{
 
-        //     showMenu(){
-        //         $('.aside').toggle()
-        //     },
-        //     setIdx(i){
-        //         $($('.header_td_bd')[i]).toggleClass('header_td_bg').siblings().removeClass('header_td_bg')
-        //     }
-        // },
+            showMenu(){
+                $('.aside').toggle()
+            },
+            setIdx(i){
+                this.$store.commit('add',i)
+                $($('.header_td_bd')[i]).toggleClass('header_td_bg').siblings().removeClass('header_td_bg')
+            }
+        },
         components:{
                 HeadColor
         }

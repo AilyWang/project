@@ -1,5 +1,5 @@
 <template>
-   <div class="from">
+   <div class="from_to">
      <table class="tab_top_" border="1" cellspacing="0" cellpadding="0">
        <tr>
          <td></td>
@@ -50,10 +50,10 @@
   .tab_top_{
     border-color:#dddddd;
     border-collapse:collapse;
-    margin-top:20px;
+    width:900px;
     position: absolute;
-    top:115px;
-    left: 500px;
+    top:85px;
+    left: 510px;
     background: white;
   }
   .tab_top_ tr td{

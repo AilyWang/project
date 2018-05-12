@@ -136,7 +136,7 @@
                     <a href="#customer">典型客户</a>
                     <a href="#contact">联系我们</a>
                     <span>|</span>
-                    <span>易网时代版权所有 © 2014-2017</span>
+                    <span>南窑国际信息技术有限团伙 © 2018-forever</span>
                 </p>
             </div>
         </div>

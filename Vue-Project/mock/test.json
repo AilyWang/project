@@ -92,19 +92,19 @@
 					"tit":"图形报表",
 					"timer":[
 						{
-							"left_ico":"iconfont icon-vine ",
+							"left_ico":"iconfont icon-xing ",
 							"tit":"折线图"
 						},
 						{
-							"left_ico":"iconfont icon-vine ",
+							"left_ico":"iconfont icon-sitemap ",
 							"tit":"柱状图"
 						},
 						{
-							"left_ico":"iconfont icon-vine ",
+							"left_ico":"iconfont icon-lifering ",
 							"tit":"饼饼图"
 						},
 						{
-							"left_ico":"iconfont icon-vine ",
+							"left_ico":"iconfont icon-filter ",
 							"tit":"雷达图"
 						}
 					]
@@ -116,15 +116,15 @@
 					"tit":"扩展组件",
 					"timer":[
 						{
-							"left_ico":"iconfont icon-vine setting_label",
+							"left_ico":"iconfont icon-lexingnew setting_label",
 							"tit":"时间轴"
 						},
 						{
-							"left_ico":"iconfont icon-vine setting_label",
+							"left_ico":"iconfont icon-tree setting_label",
 							"tit":"扩组件"
 						},
 						{
-							"left_ico":"iconfont icon-vine setting_label",
+							"left_ico":"iconfont icon-bullseye setting_label",
 							"tit":"时光机"
 						}
 					]
@@ -135,31 +135,31 @@
 			[
 				{
 					"left_ico":"iconfont icon-shezhi setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-cube",
-							"tit":"基础配置"
+							"tit":"2 基础配置"
 						},
 						{
 							"left_ico":"iconfont icon-lifering",
-							"tit":"资源管理"
+							"tit":"2 资源管理"
 						},
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"分级字典"
+							"tit":"2 分级字典"
 						},
 						{
 							"left_ico":"iconfont icon-file",
-							"tit":"数据字典"
+							"tit":"2 数据字典"
 						},
 						{
 							"left_ico":"iconfont icon-link",
-							"tit":"常用链接"
+							"tit":"2 常用链接"
 						},
 						{
 							"left_ico":"iconfont icon-refresh1",
-							"tit":"初始缓存"
+							"tit":"2 初始缓存"
 						}
 					]
 				}
@@ -167,23 +167,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-user setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-sitemap",
-							"tit":"组织机构"
+							"tit":"2 组织机构"
 						},
 						{
 							"left_ico":"iconfont icon-user",
-							"tit":"用户信息"
+							"tit":"2 用户信息"
 						},
 						{
 							"left_ico":"iconfont icon-user-o",
-							"tit":"角色授权"
+							"tit":"2 角色授权"
 						},
 						{
 							"left_ico":"iconfont icon-group",
-							"tit":"会员管理"
+							"tit":"2 会员管理"
 						}
 					]
 				}
@@ -191,11 +191,11 @@
 			[
 				{
 					"left_ico":"iconfont icon-code setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-book",
-							"tit":"生成代码"
+							"tit":"2 生成代码"
 						}
 					]
 				}
@@ -203,15 +203,15 @@
 			[
 				{
 					"left_ico":"iconfont icon-desktop setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"操作日志"
+							"tit":"2 操作日志"
 						},
 						{
 							"left_ico":"iconfont icon-listul",
-							"tit":"异常日志"
+							"tit":"2 异常日志"
 						}
 					]
 				}
@@ -219,23 +219,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-zhaopian setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"折线图"
+							"tit":"2 折线图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"柱状图"
+							"tit":"2 柱状图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"饼饼图"
+							"tit":"2 饼饼图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"雷达图"
+							"tit":"2 雷达图"
 						}
 					]
 				}
@@ -243,19 +243,19 @@
 			[
 				{
 					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"贰贰贰贰贰",
+					"tit":"2 贰贰贰贰贰",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时间轴"
+							"tit":"2 时间轴"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"扩组件"
+							"tit":"2 扩组件"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时光机"
+							"tit":"2 时光机"
 						}
 					]
 				}
@@ -265,31 +265,31 @@
 			[
 				{
 					"left_ico":"iconfont icon-shezhi setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-cube",
-							"tit":"基础配置"
+							"tit":"3 基础配置"
 						},
 						{
 							"left_ico":"iconfont icon-lifering",
-							"tit":"资源管理"
+							"tit":"3 资源管理"
 						},
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"分级字典"
+							"tit":"3 分级字典"
 						},
 						{
 							"left_ico":"iconfont icon-file",
-							"tit":"数据字典"
+							"tit":"3 数据字典"
 						},
 						{
 							"left_ico":"iconfont icon-link",
-							"tit":"常用链接"
+							"tit":"3 常用链接"
 						},
 						{
 							"left_ico":"iconfont icon-refresh1",
-							"tit":"初始缓存"
+							"tit":"3 初始缓存"
 						}
 					]
 				}
@@ -297,23 +297,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-user setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-sitemap",
-							"tit":"组织机构"
+							"tit":"3 组织机构"
 						},
 						{
 							"left_ico":"iconfont icon-user",
-							"tit":"用户信息"
+							"tit":"3 用户信息"
 						},
 						{
 							"left_ico":"iconfont icon-user-o",
-							"tit":"角色授权"
+							"tit":"3 角色授权"
 						},
 						{
 							"left_ico":"iconfont icon-group",
-							"tit":"会员管理"
+							"tit":"3 会员管理"
 						}
 					]
 				}
@@ -321,11 +321,11 @@
 			[
 				{
 					"left_ico":"iconfont icon-code setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-book",
-							"tit":"生成代码"
+							"tit":"3 生成代码"
 						}
 					]
 				}
@@ -333,15 +333,15 @@
 			[
 				{
 					"left_ico":"iconfont icon-desktop setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"操作日志"
+							"tit":"3 操作日志"
 						},
 						{
 							"left_ico":"iconfont icon-listul",
-							"tit":"异常日志"
+							"tit":"3 异常日志"
 						}
 					]
 				}
@@ -349,23 +349,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-zhaopian setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"折线图"
+							"tit":"3 折线图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"柱状图"
+							"tit":"3 柱状图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"饼饼图"
+							"tit":"3 饼饼图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"雷达图"
+							"tit":"3 雷达图"
 						}
 					]
 				}
@@ -373,19 +373,19 @@
 			[
 				{
 					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"叁叁叁叁叁",
+					"tit":"3 叁叁叁叁叁",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时间轴"
+							"tit":"3 时间轴"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"扩组件"
+							"tit":"3 扩组件"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时光机"
+							"tit":"3 时光机"
 						}
 					]
 				}
@@ -395,31 +395,31 @@
 			[
 				{
 					"left_ico":"iconfont icon-shezhi setting_label",
-					"tit":"司思丝丝",
+					"tit":" 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-cube",
-							"tit":"基础配置"
+							"tit":"4 基础配置"
 						},
 						{
 							"left_ico":"iconfont icon-lifering",
-							"tit":"资源管理"
+							"tit":"4 资源管理"
 						},
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"分级字典"
+							"tit":"4 分级字典"
 						},
 						{
 							"left_ico":"iconfont icon-file",
-							"tit":"数据字典"
+							"tit":"4 数据字典"
 						},
 						{
 							"left_ico":"iconfont icon-link",
-							"tit":"常用链接"
+							"tit":"4 常用链接"
 						},
 						{
 							"left_ico":"iconfont icon-refresh1",
-							"tit":"初始缓存"
+							"tit":"4 初始缓存"
 						}
 					]
 				}
@@ -427,23 +427,24 @@
 			[
 				{
 					"left_ico":"iconfont icon-user setting_label",
-					"tit":"司思丝丝",
+					"tit":"4 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-sitemap",
-							"tit":"组织机构"
+							"tit":"4 组织机构"
 						},
 						{
 							"left_ico":"iconfont icon-user",
-							"tit":"用户信息"
+							"tit":"4 用户信息"
 						},
 						{
 							"left_ico":"iconfont icon-user-o",
-							"tit":"角色授权"
+							"tit":"4 角色授权"
 						},
 						{
 							"left_ico":"iconfont icon-group",
-							"tit":"会员管理"
+							"tit":"4 会员管理"
+					
 						}
 					]
 				}
@@ -451,11 +452,12 @@
 			[
 				{
 					"left_ico":"iconfont icon-code setting_label",
-					"tit":"司思丝丝",
+					"tit":"4 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-book",
-							"tit":"生成代码"
+							"tit":"4 生成代码"
+					
 						}
 					]
 				}
@@ -463,15 +465,16 @@
 			[
 				{
 					"left_ico":"iconfont icon-desktop setting_label",
-					"tit":"司思丝丝",
+					"tit":"4 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"操作日志"
+							"tit":"4 操作日志"
 						},
 						{
 							"left_ico":"iconfont icon-listul",
-							"tit":"异常日志"
+							"tit":"4 异常日志"
+					
 						}
 					]
 				}
@@ -479,23 +482,24 @@
 			[
 				{
 					"left_ico":"iconfont icon-zhaopian setting_label",
-					"tit":"司思丝丝",
+					"tit":"4 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"折线图"
+							"tit":"4 折线图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"柱状图"
+							"tit":"4 柱状图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"饼饼图"
+							"tit":"4 饼饼图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"雷达图"
+							"tit":"4 雷达图"
+					
 						}
 					]
 				}
@@ -503,19 +507,20 @@
 			[
 				{
 					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"司思丝丝",
+					"tit":"4 司思丝丝",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时间轴"
+							"tit":"4 时间轴"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"扩组件"
+							"tit":"4 扩组件"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时光机"
+							"tit":"4 时光机"
+					
 						}
 					]
 				}
@@ -529,27 +534,27 @@
 					"timer":[
 						{
 							"left_ico":"iconfont icon-cube",
-							"tit":"基础配置"
+							"tit":"5 基础配置"
 						},
 						{
 							"left_ico":"iconfont icon-lifering",
-							"tit":"资源管理"
+							"tit":"5 资源管理"
 						},
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"分级字典"
+							"tit":"5 分级字典"
 						},
 						{
 							"left_ico":"iconfont icon-file",
-							"tit":"数据字典"
+							"tit":"5 数据字典"
 						},
 						{
 							"left_ico":"iconfont icon-link",
-							"tit":"常用链接"
+							"tit":"5 常用链接"
 						},
 						{
 							"left_ico":"iconfont icon-refresh1",
-							"tit":"初始缓存"
+							"tit":"5 初始缓存"
 						}
 					]
 				}
@@ -557,23 +562,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-user setting_label",
-					"tit":"呜呜呜呜",
+					"tit":"5 呜呜呜呜",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-sitemap",
-							"tit":"组织机构"
+							"tit":"5 组织机构"
 						},
 						{
 							"left_ico":"iconfont icon-user",
-							"tit":"用户信息"
+							"tit":"5 用户信息"
 						},
 						{
 							"left_ico":"iconfont icon-user-o",
-							"tit":"角色授权"
+							"tit":"5 角色授权"
 						},
 						{
 							"left_ico":"iconfont icon-group",
-							"tit":"会员管理"
+							"tit":"5 会员管理"
 						}
 					]
 				}
@@ -581,11 +586,11 @@
 			[
 				{
 					"left_ico":"iconfont icon-code setting_label",
-					"tit":"呜呜呜呜",
+					"tit":"5 呜呜呜呜",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-book",
-							"tit":"生成代码"
+							"tit":"5 生成代码"
 						}
 					]
 				}
@@ -593,15 +598,15 @@
 			[
 				{
 					"left_ico":"iconfont icon-desktop setting_label",
-					"tit":"呜呜呜呜",
+					"tit":"5 呜呜呜呜",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-bookmark",
-							"tit":"操作日志"
+							"tit":"5 操作日志"
 						},
 						{
 							"left_ico":"iconfont icon-listul",
-							"tit":"异常日志"
+							"tit":"5 异常日志"
 						}
 					]
 				}
@@ -609,23 +614,23 @@
 			[
 				{
 					"left_ico":"iconfont icon-zhaopian setting_label",
-					"tit":"呜呜呜呜",
+					"tit":"5 呜呜呜呜",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"折线图"
+							"tit":"5 折线图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"柱状图"
+							"tit":"5 柱状图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"饼饼图"
+							"tit":"5 饼饼图"
 						},
 						{
 							"left_ico":"iconfont icon-vine ",
-							"tit":"雷达图"
+							"tit":"5 雷达图"
 						}
 					]
 				}
@@ -633,19 +638,19 @@
 			[
 				{
 					"left_ico":"iconfont icon-vine setting_label",
-					"tit":"呜呜呜呜",
+					"tit":"5 呜呜呜呜",
 					"timer":[
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时间轴"
+							"tit":"5 时间轴"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"扩组件"
+							"tit":"5 扩组件"
 						},
 						{
 							"left_ico":"iconfont icon-vine setting_label",
-							"tit":"时光机"
+							"tit":"5 时光机"
 						}
 					]
 				}

@@ -1,11 +1,11 @@
 <template>
-  <div class="box_section">
-        <span class="btn_left">
+  <div class="box_section_">
+        <span class="btn_left_">
             <i class="iconfont icon-shezhi kang"></i>
             <span class="btn_text" @click="dialogTableVisible = true">新增</span>
           </span>
     <el-dialog title="基本信息" :visible.sync="dialogTableVisible" >
-      <i class="iconfont icon-navicon kang" style="position: absolute; left: 0;top: 20px;"></i>
+      <i class="iconfont icon-navicon kang" style="position: absolute; left: 10px;top: 20px;"></i>
       <el-form :label-position="labelPosition" label-width="100px" >
         <el-form-item label="用户名">
           <el-input style="width: 140px;"></el-input>
@@ -35,12 +35,12 @@
       <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">保存</el-button>
       <el-button type="danger"  @click="dialogTableVisible = false">关闭</el-button>
     </el-dialog>
-        <span class="btn_in">
+        <span class="btn_in_">
            <i class="iconfont icon-pencil kang"></i>
             <span class="btn_text" @click="centerDialogVisible = true">编辑</span>
           </span>
     <el-dialog title="基本信息" :visible.sync="centerDialogVisible" >
-      <i class="iconfont icon-navicon kang" style="position: absolute; left: 0;top: 20px;"></i>
+      <i class="iconfont icon-navicon kang" style="position: absolute; left: 10px;top: 20px;"></i>
       <el-form :label-position="labelPosition" label-width="100px">
         <el-form-item label="用户名">
           <el-input style="width: 140px;"></el-input>
@@ -70,11 +70,11 @@
       <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">更新</el-button>
       <el-button type="danger"  @click="centerDialogVisible = false">关闭</el-button>
     </el-dialog>
-        <span class="btn_right">
+        <span class="btn_right_">
              <i class="iconfont icon-shezhi kang"></i>
             <span class="btn_text"  @click="open2">删除</span>
         </span>
-        <span class="btn_in">
+        <span class="btn_in_">
            <i class="iconfont icon-filter kang"></i>
             <span class="btn_text">过滤</span>
          </span>
@@ -83,7 +83,7 @@
             <span class="btn_text" @click="outerVisible = true" >查询</span>
          </span>
     <el-dialog title="组合查询" :visible.sync="outerVisible" >
-      <i class="iconfont icon-search kang" style="position: absolute; left: 0;top: 20px;"></i>
+      <i class="iconfont icon-search kang" style="position: absolute; left: 10px;top: 20px;"></i>
       <el-form :label-position="labelPosition" label-width="100px">
         <div class="popup">
               <span class="font_">方式</span>
@@ -130,18 +130,21 @@
           </select>
         </div>
         <div class="popup">
-          <span  class="font_">数值</span>
-          <input class="fived_in"  type="text" placeholder=""/>
+          <span  class="font_">右括号</span>
+          <select>
+            <option>无</option>
+            <option>）</option>
+          </select>
         </div>
       </el-form>
-      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:460px;">查询</el-button>
+      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:460px;margin-top: 140px">查询</el-button>
       <el-button type="danger"  @click="outerVisible = false">关闭</el-button>
     </el-dialog>
-         <span class="btn_in_right">
+         <span class="btn_in_right_">
            <i class="iconfont icon-file1 kang"></i>
             <span class="btn_text">导出</span>
             <span class="symbol">▼</span>
-            <div class="bower_top">
+            <div class="bower_top_hover">
                  <div class="bower_bottom">
                    <img src="../../assets/img/qqq.jpg">
                    <p>导出PDF报表</p>
@@ -160,7 +163,7 @@
                  </div>
              </div>
          </span>
-         <span class="btn_in_last">
+         <span class="btn_in_last_">
              <i class="iconfont icon-listul kang"></i>
             <span class="btn_text">更多</span>
             <span class="symbol">▼</span>
@@ -169,7 +172,6 @@
                    <p>重置密码</p>
              </div>
          </span>
-
   </div>
 </template>
 
@@ -205,30 +207,34 @@
 </script>
 
 <style>
-  .box_section{
-    position: absolute;
-    left:500px ;
-    top:100px;
-    width:925px;
-    height:100%;
+  .box_section_{
     cursor: pointer;
+    margin-top: 10px;
+    margin-left: -290px;
   }
-  .btn_left{
+  .btn_left_{
     padding:10px 4px;
     background:#009688;
     border-radius:3px;
     color: white;
+    margin-left: 100px;
   }
-  .btn_in{
+  .btn_in_{
     padding:10px 4px;
     background:#1e9fff;
     border-radius:3px;
     color: white;
   }
-  .btn_in:nth-child(2){
+  .btn_right_{
+    padding: 10px 4px;
+    background: #ff5722;
+    border-radius: 3px;
+    color: white;
+  }
+  .btn_in_:nth-child(2){
     background: #ffb800;
   }
-  .btn_in_right{
+  .btn_in_right_{
     padding:10px 4px;
     background:#1e9fff;
     border-radius:3px;
@@ -237,7 +243,7 @@
     margin-right:10px;
      margin-left:10px;
   }
-  .btn_in_last{
+  .btn_in_last_{
     padding:10px 4px;
     background:#ffb800;
     border-radius:3px;
@@ -247,12 +253,11 @@
   .symbol{
     color: black;
   }
-  .btn_right{
+  .btn_right_{
     padding:10px 4px;
     background:#ff5722;
     border-radius:3px;
     color: white;
-
   }
   .btn_fived{
     padding:10px 4px;
@@ -260,21 +265,21 @@
     border-radius:3px;
     color: white;
   }
-  .bower_top{
+  .bower_top_hover{
     width: 150px;
-    height: 115px;
+    height: 100px;
     border: 1px solid #d3d3d3;
     background: #f3f3f3;
     position: absolute;
-    top:40px;
+    top:35px;
     left: 0;
     display: none;
   }
-  .btn_in_right:hover .bower_top{
+  .btn_in_right_:hover .bower_top_hover{
     display: block;
     z-index: 999;
   }
-  .btn_in_right:hover{
+  .btn_in_right_:hover{
     background: #9dd1f8;
   }
   .bower_bottom{
@@ -301,7 +306,7 @@
     border: 1px solid #d3d3d3;
     background: #f3f3f3;
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 0;
     color: #444444;
     display: none;
@@ -315,11 +320,11 @@
     float: left;
     margin-top: 0px;
   }
-  .btn_in_last:hover .bower_bottom_right{
+  .btn_in_last_:hover .bower_bottom_right{
     display: block;
     z-index: 999;
   }
-  .btn_in_last:hover{
+  .btn_in_last_:hover{
     background: #f7dc98;
   }
   .bower_bottom_right:hover{
@@ -328,16 +333,16 @@
   .bower_bottom:hover{
     background: #d3d3d3;
   }
-  .btn_left:hover{
+  .btn_left_:hover{
     background: #2acbbc;
   }
-  .btn_in:nth-child(2):hover{
+  .btn_in_:nth-child(2):hover{
     background: #f6ce67;
   }
-  .btn_right:hover{
+  .btn_right_:hover{
     background: #f69475;
   }
-  .btn_in:nth-child(4):hover{
+  .btn_in_:nth-child(4):hover{
     background: #74c1fa;
   }
   .btn_fived:hover{
@@ -348,7 +353,7 @@
   }
   .popup{
     float: left;
-    padding-right: 20px;
+    padding-right: 10px;
   }
   .popup select{
     width:80px;

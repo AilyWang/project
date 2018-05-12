@@ -9,6 +9,11 @@ export default {
                 ]
     }, //定义需要共享的状态
     mutations:{
+        // "inc":(state,args)=>{
+        //     // console.log(args )
+        //     state.num = args
+        //     state.tabData = args
+        //     // console.log(state.num)
         "inc":(state,args)=>{
             // console.log(args )
             state.num = args
@@ -17,25 +22,31 @@ export default {
 
         },
         "tabDatachange":(state, amount)=>{
-            state.tabData.push(amount) 
+            if(state.tabData.indexOf(amount)==-1){
+                state.tabData.push(amount) 
+            }
+
+        },
+        "add":(x,y)=>{
+            x.num = y
         }
     }, //store用来修改state中的状态值的地方
     actions:{ //ajax
-        "add":(store,playload)=>{
-            var promise = new Promise((resolve)=>{
-                store.commit("inc",playload)
-            },(reject)=>{
+        // "add":(store,playload)=>{
+        //     var promise = new Promise((resolve)=>{
+        //         store.commit("inc",playload)
+        //     },(reject)=>{
 
-            },(notice)=>{
+        //     },(notice)=>{
 
-            })
-        },
+        //     })
+        // },
         "del":(store,num)=>{
 
         },
-        "tabDatachange":(store,value)=>{
-            this.state = value
-        }
+        // "tabDatachange":(store,value)=>{
+        //     this.state = value
+        // }
     },//用来接收外部事件的请求,筛选条件-〉commit mutations
     getters:{
         "getNum":(state)=>{

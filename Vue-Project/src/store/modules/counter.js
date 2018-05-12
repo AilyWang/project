@@ -5,6 +5,16 @@ export default {
                     name: "系统首页",
                     icon:'iconfont icon-home', 
                     isActive: true 
+                },
+                {
+                    name: "系统首页",
+                    icon: 'iconfont icon-home',
+                    isActive: true
+                },
+                {
+                    name: "系统首页",
+                    icon: 'iconfont icon-home',
+                    isActive: true
                 }
                 ]
     }, //定义需要共享的状态

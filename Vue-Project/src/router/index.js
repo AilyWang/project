@@ -25,19 +25,20 @@ export default new Router({
       name: "SystemModule",
       component: SystemModule
     },
+
+    {
+      path: "/",
+      name: "ForeGround",
+      component: ForeGround
+    },
     {
       path: "/login",
       name: "LoginBg",
       component: LoginBg
     },
     {
-      path: "/foreground",
-      name: "ForeGround",
-      component: ForeGround
-    },
-    {
-      path: "/",
-      name: "index",
+      path: "/index",
+      name: "Index",
       component: Index
     },
     {

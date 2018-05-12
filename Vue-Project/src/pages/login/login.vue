@@ -36,9 +36,9 @@
                         if(name == "" || pass == ""){
                             alert("请输入用户名和密码!!");
                         } else if(this.form.name == name && this.form.pass == pass){
-                            this.$router.push("");
+                            this.$router.push("index");
                         } else {
-                            alert("正输入正确的用户名和密码！");
+                            alert("请输入正确的用户名和密码！");
                         }
                     })
                 })

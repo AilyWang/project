@@ -1,13 +1,19 @@
 <template>
   <div>
-    <div class="checkMessage">
+    <div class="checkMessage" v-show="tg">
+      <div class="foot">
+        <p>
+          <!--<a href="javascript:;"><i class="iconfont icon-plus"></i>&nbsp;&nbsp;<span class="save">保存</span></a>-->
+          <a href="javascript:;"  @click="hiddenProduct"><i class="iconfont icon-close"></i>&nbsp;&nbsp;<span class="close">关闭</span></a>
+        </p>
+      </div>
       <div class="Msg">
         <form action="" class="detail_message">
           <p class="basicMsg">
             <span>基本信息</span>
           </p>
           <div style="margin-top: 10px" class="product_name">
-            <label>商品名称</label><input type="text" v-model="product.name">
+            <label>商品名称</label><input type="text" v-model="productData[fun].name">
           </div>
           <div class="product_quality">
             <p class="left">
@@ -25,7 +31,7 @@
             </p>
           </div>
           <div>
-            <label>商品描述</label><input type="text" name="desc" v-model="product.describe" @blur="sendMsg">
+            <label>商品描述</label><input type="text" name="desc" v-model="productData[fun].describe" @blur="sendMsg">
           </div>
           <!--{{product}}-->
         </form>
@@ -36,50 +42,33 @@
             <span>扩展信息</span>
           </p>
           <div style="margin-top: 10px" class="product_name">
-            <label>所属机构</label><input type="text" class="affiliation" v-model="chooseMsg.depart"><span class="show_orga" @click="showOrga"><img src="../../assets/images/downArrow.jpg"></span>
+            <label>所属机构</label><input type="text" class="affiliation" v-model="productData[fun].instit"><span class="show_orga" @click="showOrga"><img src="../../assets/images/downArrow.jpg"></span>
             <ul class="organization" v-show="agency">
-              <!--<li class="company">-->
-              <!--<span @click="packUp" class="companyName"></span>深圳易网时代信息技术有限公司-->
-              <!--<ul class="department">-->
-              <!--<li >-->
-              <!--<span class="one"@click="showManagerPerson"></span>总经理部-->
-              <!--<ul class="manager">-->
-              <!--<li><span></span>总经理</li>-->
-              <!--<li><span></span>党委书记</li>-->
-              <!--<li><span></span>副总经理</li>-->
-              <!--</ul>-->
-              <!--</li>-->
-              <!--<li><span></span>综合办公室</li>-->
-              <!--<li><span></span>人力资源部</li>-->
-              <!--<li><span></span>财务部</li>-->
-              <!--<li><span></span>项目管理部</li>-->
-              <!--</ul>-->
-              <!--</li>-->
               <li v-for="(p,index) in allDepartment" @click="choose(index)">{{p.department}}</li>
             </ul>
           </div>
 
           <div style="margin-top: 10px" class="product_name">
-            <label>商家日期</label><input type="text" v-model="chooseMsg.date"><span><img src="../../assets/images/calendar.jpg"></span>
+            <label>商家日期</label><input type="text" v-model="productData[fun].date"><span><img src="../../assets/images/calendar.jpg"></span>
           </div>
           <div style="margin-top: 10px" class="product_name">
-            <label>规格型号</label><input type="text" v-model="chooseMsg.asd"><span @click="showStyle"><img src="../../assets/images/downArrow.jpg"></span>
+            <label>规格型号</label><input type="text" v-model="productData[fun].spec"><span @click="showStyle"><img src="../../assets/images/downArrow.jpg"></span>
             <ul class="style" v-show="sizeStyle">
               <li v-for="(n,index) in specifications" @click="check(index)">{{n.title}}</li>
             </ul>
           </div>
           <div style="margin-top: 10px" class="product_name">
-            <label>销售单价</label><input type="text" v-model="chooseMsg.price"><span><img src="../../assets/images/upArrow.jpg" style="padding-top: 2px" @click="addPrice">
+            <label>销售单价</label><input type="text" v-model="productData[fun].price"><span><img src="../../assets/images/upArrow.jpg" style="padding-top: 2px" @click="addPrice">
         <img src="../../assets/images/downArrow.jpg" @click="reducePrice"></span>
           </div>
           <!--<div style="margin-top: 10px" class="product_name thumbnail">-->
           <!--<label>产品缩略图</label><input type="text"><span><img src="../../assets/images/upload.jpg" style="float: left;padding-left:5px">上传图片</span>-->
           <!--</div>-->
           <div class="note_infor">
-            <label>备注信息</label><input type="text" name="desc" v-model="chooseMsg.annotation">
+            <!--{{}}-->
+            <label>备注信息</label><input type="text" name="desc" v-model="productData[fun].note">
           </div>
         </form>
-        <!--{{num}}-->
       </div>
    </div>
   </div>
@@ -88,17 +77,16 @@
 <script>
   export default {
     name: "checkProductMsg",
+    props:['productData','fun'],
     data(){
       return{
+        tg:true,
         product:{
           checkedTrait:[]
         },
         agency:false,
         sizeStyle:false,
         chooseMsg:{},
-        // asd:"",
-        // price:"",
-        // depart:"",
         specifications:[
           {
             "title":"KC-W200SW"
@@ -124,8 +112,13 @@
       }
     },
     methods:{
+      // fun(i){
+      //   // console.log(i);
+      // },
+      hiddenProduct(){
+        this.tg=!this.tg;
+      },
       sendMsg(){
-        // console.log(this)
         this.$store.commit('product',this.product)
       },
       showOrga(){
@@ -133,12 +126,6 @@
       },
       showStyle(){
         this.sizeStyle=!this.sizeStyle
-      },
-      addPrice(){
-        this.chooseMsg.price++;
-      },
-      reducePrice(){
-        this.chooseMsg.price--;
       },
       showManagerPerson(){
         $(".one").toggleClass("add").parent().children(".manager").toggle(300);
@@ -160,13 +147,42 @@
 </script>
 
 <style lang="scss" scoped>
+  .foot{
+    position:absolute;
+    left: 960px;
+    top: 460px;
+    z-index: 300;
+    height:40px;
+    padding-right:5px;
+    line-height: 40px;
+    p{
+      float:right;
+      a{
+        display: inline-block;
+        width:70px;
+        color:#fff;
+        background: #FF5722;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 3px;
+        margin-top:10px;
+        &:first-child{
+          background: brown;
+        }
+        .iconfont{
+          font-size:12px;
+        }
+      }
+    }
+  }
   .checkMessage{
    width:878px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     .Msg{
       padding-top: 100px;
       position:absolute;
-      left:0;
+      left:200px;
       top:0;
       width:100%;
       height:100%;
@@ -175,7 +191,7 @@
       /*margin:0 auto;*/
       .detail_message{
         width:878px;
-        margin:0 auto;
+        /*margin:0 auto;*/
         background: #fff;
         .basicMsg{
           position:relative;
@@ -195,8 +211,7 @@
           input{
             width:575px;
             height:28px;
-            background: #fff3f3;
-            border:1px solid #ffdede;
+            border:1px solid #f0f0f0;
             border-radius: 2px;
           }
         }
@@ -244,15 +259,14 @@
     .Msg2{
       position:absolute;
       z-index:100;
-      width:878px;
-      margin:0 auto;
+      /*width:878px;*/
+      /*margin:0 auto;*/
       /*height:375px;*/
       /*background:#fff;*/
       .detail_message{
-        width:878px;
-        margin:0 auto;
-        margin-top:61px;
-        height:250px;
+        /*width:878px;*/
+        /*margin:0 auto;*/
+        height:275px;
         background: #fff;
         .basicMsg{
           position:relative;
@@ -405,8 +419,10 @@
       }
     }
     .two{
-      width:878px;
-      margin:0 auto;
+      width: 878px;
+      position: absolute;
+      left: 200px;
+      top:235px;
     }
   }
 

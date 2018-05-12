@@ -1,11 +1,16 @@
 export default {
     state:{
         num:0,
-        tabData:[{  
+        tabData:[{
                     name: "系统首页",
-                    icon:'iconfont icon-home', 
-                    isActive: true 
-                }
+                    icon:'iconfont icon-home',
+                    isActive: true
+                },
+          {
+          name: "系统首页",
+          icon:'iconfont icon-home',
+          isActive: true
+        }
                 ]
     }, //定义需要共享的状态
     mutations:{
@@ -23,7 +28,7 @@ export default {
         },
         "tabDatachange":(state, amount)=>{
             if(state.tabData.indexOf(amount)==-1){
-                state.tabData.push(amount) 
+                state.tabData.push(amount)
             }
 
         },

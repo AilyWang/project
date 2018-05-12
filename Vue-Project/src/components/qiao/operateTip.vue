@@ -1,16 +1,16 @@
 <template>
-    <div class="shadow">
-      <div class="tip" v-show="hidden">
+    <div class="shadow" v-show="tip">
+      <div class="tip">
         <div class="title">
           <span>操作提示</span>
-          <a href="javascript:;" class="close"><i class="iconfont icon-close" @click="hiddenTip"></i></a>
+          <a href="javascript:;" class="close"><i class="iconfont icon-close" @click="hidePanel"></i></a>
         </div>
         <div class="content">
           <img src="../../assets/images/tip.jpg" alt="">
           <span>请先选择要操作的数据</span>
         </div>
         <div class="sure">
-          <p @click="hiddenTip">确定</p>
+          <p @click="hidePanel">确定</p>
         </div>
       </div>
     </div>
@@ -18,15 +18,20 @@
 
 <script>
     export default {
+      props:{
+        panelShow: {
+          type: Boolean
+        }
+      },
         name: "operateTip",
         data(){
          return{
-           hidden:true
+           tip:true
          }
         },
         methods:{
-          hiddenTip(){
-            this.hidden=false;
+          hidePanel() {
+            this.tip=!this.tip
           }
         }
     }
@@ -49,7 +54,6 @@
       position:absolute;
       left:0;
       right:0;
-      top:0;
       bottom:0;
       margin:auto;
       .title{

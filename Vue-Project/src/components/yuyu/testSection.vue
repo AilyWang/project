@@ -6,12 +6,12 @@
       </a>
       <div class='left_nav'>
     		<ul >
-          <li calss='Click_Zzz' @click="changeTab(i)" v-for="(T,i) in tab">
+          <li class="Sea" v-show='random'  @click="changeTab(i)" v-for="(T,i) in tab">
             <!-- :class="{active:T.isActive}" 点击样式 -->
               <a  href="#"    >
                 <i :class="'icon '+T.icon"></i>
                 {{T.name}}
-              <i @click='closeClose' v-if='i !== 0' class="icon iconfont icon-close "></i>
+              <i  @click='closeClose(T,i)' v-if='i !== 0' class="icon iconfont icon-close "></i>
 
               </a>
           </li>
@@ -36,8 +36,8 @@
             <i class="icon iconfont icon-next"></i>
       </a>
   	</nav>
-    <section class="test_section_content">
-      <div :is='test_component_name'></div>
+    <section :is='test_component_name' class="test_section_content">
+      <!-- <div ></div> -->
     </section>
   </section>
 </template>
@@ -56,10 +56,10 @@
       name: 'testSection',
       data(){
         return{
-            isClick:true,
+            random:true,
             tabsName: [],  
-          isFull:true,
-           tabsName: [],
+            isFull:true,
+            tabsName: [],
             active: false ,
             isActive: true ,
             ulLeftNum : 0,
@@ -84,6 +84,7 @@
             tab:"getTab"
       }),
       updated(){
+        this.changeTab()
       },
       beforeupdated(){
 
@@ -92,8 +93,11 @@
         // this.tabsName = this.$store.state.counter.tabData
       },
       methods:{
-        closeClose(){
-
+        closeClose(t,i){
+          // console.log($($('.Sea')[i]))
+          $($('.Sea')[i]).css('display','none')
+          // $('.Sea')[i].vShow = !this.random
+          // this.random = !this.random
         },
         closeTab(i){
           // console.log(i,$($('.left_nav .icon-close').parent().parent()[i]))

@@ -108,7 +108,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                     };
                    
                     setInterval(() => {
-                        console.log(1)
+                        // console.log(1)
                         myChart.setOption(option);
                     }, 3000)
                     

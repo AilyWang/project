@@ -1,9 +1,17 @@
+
 {
   "productMessage":[
-    {"name":180,"num":"01","spec":"KC-W001SW","price":"100","className":"test0"},
-    {"name":120,"num":"02","spec":"KC-W002SW","price":"200","className":"test1"},
-    {"name":200,"num":"03","spec":"KC-W003SW","price":"300","className":"test2"},
-    {"name":100,"num":"04","spec":"KC-W004SW","price":"400","className":"test3"}
+    {"name":1,"num":"01","spec":"KC-W001SW","price":"100","instit":"test0","date":"2018-01-01","note":"该产品很好"},
+    {"name":2,"num":"02","spec":"KC-W002SW","price":"200","instit":"test1","date":"2018-01-02","note":"该产品好"},
+    {"name":3,"num":"03","spec":"KC-W003SW","price":"300","instit":"test2","date":"2018-01-03","note":"该产品一般"},
+    {"name":4,"num":"04","spec":"KC-W004SW","price":"400","instit":"test3","date":"2018-01-04","note":"该产品不好"},
+    {"name":5,"num":"01","spec":"KC-W001SW","price":"100","instit":"test0","date":"2018-01-01","note":"该产品很好"},
+    {"name":6,"num":"02","spec":"KC-W002SW","price":"200","instit":"test1","date":"2018-01-02","note":"该产品好"},
+    {"name":7,"num":"03","spec":"KC-W003SW","price":"300","instit":"test2","date":"2018-01-03","note":"该产品一般"},
+    {"name":8,"num":"04","spec":"KC-W004SW","price":"400","instit":"test3","date":"2018-01-04","note":"该产品不好"},
+    {"name":9,"num":"01","spec":"KC-W001SW","price":"100","instit":"test0","date":"2018-01-01","note":"该产品很好"},
+    {"name":10,"num":"02","spec":"KC-W002SW","price":"200","instit":"test1","date":"2018-01-02","note":"该产品好"},
+    {"name":11,"num":"03","spec":"KC-W003SW","price":"300","instit":"test2","date":"2018-01-03","note":"该产品一般"},
+    {"name":12,"num":"04","spec":"KC-W004SW","price":"400","instit":"test3","date":"2018-01-04","note":"该产品不好"}
   ]
 }
-

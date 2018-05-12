@@ -107,10 +107,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                         ]
                     };
                    
-                    setInterval(() => {
-                        console.log(1)
                         myChart.setOption(option);
-                    }, 3000)
                     
                 })
            },
@@ -186,6 +183,7 @@ import echarts from "../../../node_modules/echarts/dist/echarts.min"
                         ]
                     };
                     myChart.setOption(option);
+                   
                });
            },
            sourcesheet(){

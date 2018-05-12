@@ -6,7 +6,7 @@
     </div>
     <div class="login_input">
         <span class="login_input_icon"><i class="iconfont icon-key input_icon"></i></span>
-        <input type="password" placeholder="密码" class="login_username">
+        <input type="password" placeholder="密码" class="login_userpass">
     </div>
 </div>
     
@@ -24,6 +24,7 @@
     background: #fff;
     margin-bottom: 30px;
     outline: none;
+    text-align: left;
 }
 .login_input_icon{
     display: inline-block;
@@ -39,7 +40,7 @@
     font-size: 12px;
     color: #000;
 }
-.login_username{
+.login_username,.login_userpass{
     width: 85%;
     height: 38px;
     line-height: 38px;

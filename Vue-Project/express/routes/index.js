@@ -3,6 +3,7 @@ var router = express.Router();
 var index  = require('../../mock/index.json');
 var from   = require('../../mock/from.json')
 var TestData = require("../../mock/test.json");
+var Login = require("../../mock/login.json")
 
 var productData=require("../../mock/qq.json");
 /* GET home page. */
@@ -37,6 +38,18 @@ router.get('/index', function(req, res, next) {
 router.get('/from', function(req, res, next) {
   res.json(from);
 });
+// router.post('/login', function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+//   res.header("X-Powered-By", ' 3.2.1')
+//   res.header("Content-Type", "application/json;charset=utf-8");
+//   // res.send(req.body);
+//   console.log(req.body);
+// });
+router.get("/login", function(req, res, next){
+  res.json(Login);
+})
 
 
 router.get("/s",(req,res)=>{

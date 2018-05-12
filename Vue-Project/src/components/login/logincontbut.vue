@@ -1,6 +1,6 @@
 <template>
     <div class="login_push">
-        <button class="login_but login_entry">
+        <button class="login_but login_entry" type="button">
             <span class="but_box"><i class="iconfont icon-checkcircle but_icon but_success"></i></span>
             登录
         </button>

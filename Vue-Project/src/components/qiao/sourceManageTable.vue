@@ -3,22 +3,22 @@
     <table cellpadding="0" cellspacing="0" class="source_table">
       <tr height="28">
         <th></th>
-        <th><input type="checkbox"></th>
+        <th><input type="checkbox" v-model="checked" @click="selectAll()"></th>
         <th>商品名称</th>
         <th>商品编号</th>
         <th>规格型号</th>
         <th>销售单价</th>
-        <th>完成率</th>
+        <!-- <th>完成率</th> -->
         <th>操作</th>
       </tr>
       <tr height="28" v-for="(p,index) in product">
         <td>{{index+1}}</td>
-        <td><input type="checkbox"></td>
+        <td><input type="checkbox" v-model="sonChecked"></td>
         <td>{{p.name}}</td>
         <td>{{p.num}}</td>
         <td>{{p.spec}}</td>
         <td>{{p.price}}</td>
-        <td></td>
+        <!-- <td></td> -->
         <td>
           <span class="edit">
             <a href="javascript:;" @click="showProductMsg(index)">编辑</a>
@@ -29,11 +29,9 @@
         </td>
       </tr>
     </table>
-    <check-product-msg v-show="hiddenProductMsg"></check-product-msg>
+    <check-product-msg v-show="tg" :productData="product" :fun="sendIndex"></check-product-msg>
   </div>
-
 </template>
-
 <script>
   import ProductApi from '../../api/ProductApi'
   import checkProductMsg from './checkProductMsg'
@@ -44,8 +42,11 @@
       },
       data(){
         return{
+          checked:false,
+          sonChecked:false,
           product:[],
-          hiddenProductMsg:false
+          sendIndex:null,
+          tg:false
         }
       },
       created(){
@@ -58,10 +59,19 @@
           this.product.splice(index, 1);
         },
         showProductMsg(i){
-          this.hiddenProductMsg=!this.hiddenProductMsg;
-          console.log(i);
-        }
-      }
+          // alert(i)
+          this.sendIndex = i
+          this.tg=!this.tg;
+        },
+        selectAll: function() {
+          this.checked=!this.checked;
+          if(this.checked){
+            this.sonChecked=!this.sonChecked;
+          }else{
+            this.sonChecked=!this.sonChecked;
+            };
+          }
+        },
     }
 </script>
 

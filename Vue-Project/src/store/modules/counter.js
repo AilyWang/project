@@ -6,15 +6,25 @@ export default {
                     icon:'iconfont icon-home', 
                     isActive: true 
                 },
-                {
-                    name: "系统首页",
-                    icon: 'iconfont icon-home',
-                    isActive: true
+                {  
+                    name: "资源管理",
+                    icon:'iconfont icon-lifering', 
+                    isActive: true 
                 },
-                {
-                    name: "系统首页",
-                    icon: 'iconfont icon-home',
-                    isActive: true
+                {  
+                    name: "组织机构",
+                    icon:'iconfont icon-sitemap', 
+                    isActive: true 
+                },
+                {  
+                    name: "角色授权",
+                    icon:'iconfont icon-user-o', 
+                    isActive: true 
+                },
+                {  
+                    name: "即时聊天",
+                    icon:'iconfont icon-tree', 
+                    isActive: true 
                 }
                 ]
     }, //定义需要共享的状态

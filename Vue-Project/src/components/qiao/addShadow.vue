@@ -47,7 +47,7 @@
         },
         methods:{
           shadowHidden(){
-            this.hidden=false;
+            this.hidden=!this.hidden;
           },
           changetab(index){
             if(index == 1){

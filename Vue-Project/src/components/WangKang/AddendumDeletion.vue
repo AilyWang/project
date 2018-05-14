@@ -32,7 +32,7 @@
           <el-input></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">保存</el-button>
+      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:370px;">保存</el-button>
       <el-button type="danger"  @click="dialogTableVisible = false">关闭</el-button>
     </el-dialog>
     <span class="btn_in">
@@ -67,7 +67,7 @@
           <el-input></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="success"   @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">更新</el-button>
+      <el-button type="success"   @click="resetForm('dynamicValidateForm')"style="margin-left:370px;">更新</el-button>
       <el-button type="danger"  @click="centerDialogVisible = false">关闭</el-button>
     </el-dialog>
     <span class="btn_right">

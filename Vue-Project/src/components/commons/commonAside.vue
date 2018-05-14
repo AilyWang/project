@@ -11,7 +11,7 @@
             <a href="javascript:;" class="setting_dp"></a>
           </div>
         </div>
-        {{num}}
+        <!-- {{num}} -->
         <ul class="panel_list" >
             <common-aside-li :send="e[0].timer"></common-aside-li>
         </ul>

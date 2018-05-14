@@ -32,7 +32,7 @@
           <el-input></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">保存</el-button>
+      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:370px;">保存</el-button>
       <el-button type="danger"  @click="dialogTableVisible = false">关闭</el-button>
     </el-dialog>
         <span class="btn_in_">
@@ -67,7 +67,7 @@
           <el-input style="width: 340px; "></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:500px;">更新</el-button>
+      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:370px;">更新</el-button>
       <el-button type="danger"  @click="centerDialogVisible = false">关闭</el-button>
     </el-dialog>
         <span class="btn_right_">
@@ -137,7 +137,7 @@
           </select>
         </div>
       </el-form>
-      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:460px;margin-top: 140px">查询</el-button>
+      <el-button type="success"  @click="resetForm('dynamicValidateForm')" style="margin-left:270px;margin-top: 240px">查询</el-button>
       <el-button type="danger"  @click="outerVisible = false">关闭</el-button>
     </el-dialog>
          <span class="btn_in_right_">
@@ -210,7 +210,7 @@
   .box_section_{
     cursor: pointer;
     margin-top: 10px;
-    margin-left: -290px;
+    margin-left: 100px;
   }
   .btn_left_{
     padding:10px 4px;

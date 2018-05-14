@@ -11,14 +11,14 @@
        <!--<a href="javascript:;">删除</a>-->
       <!--</li>-->
       <li class="moduleCode">
-        <a href="javascript:;" @click="checkTip">查询</a>
+        <a href="javascript:;" @click="showPanel">查询</a>
       </li>
     </ul>
     <source-manage-table></source-manage-table>
     <!--<choice-information v-show="hidden"></choice-information>-->
 
     <add-shadow v-show="hidden"></add-shadow>
-    <operate-tip v-show="check"></operate-tip>
+    <operate-tip v-show="tip"></operate-tip>
 
   </div>
 </template>
@@ -33,7 +33,7 @@
     data(){
       return{
         hidden:false,
-        check:false
+        tip:false
       }
     },
     components:{
@@ -46,8 +46,8 @@
       showAdd(){
         this.hidden=!this.hidden;
       },
-      checkTip(){
-        this.check=!this.hidden;
+      showPanel(){
+        this.tip=!this.tip;
       }
     }
   }

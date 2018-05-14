@@ -1,10 +1,10 @@
 <template>
-    <div class="home_page_section">
-        <div class="home_page_section_cont">
+    <!-- <div class="home_page_section"> -->
+        <!-- <div class="home_page_section_cont"> -->
             <!-- <system-navigation></system-navigation> -->
             <system-content></system-content>
-        </div>
-    </div>
+        <!-- </div> -->
+    <!-- </div> -->
 </template>
 <script>
     // import SystemNavigation from "./systemnavigation"

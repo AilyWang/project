@@ -1,48 +1,49 @@
 <template>
   <section class="test_section">
-  	<nav class='test_section_nav'>
+    <nav class='test_section_nav'>
       <a href="#" class="moveClick click_previous" @click='click_previous()'>
         <i class="icon iconfont icon-previous"></i>
       </a>
       <div class='left_nav'>
-    		<ul >
-          <li calss='Click_Zzz' @click="changeTab(i)" v-for="(T,i) in tab">
+        <ul >
+          <li class="Sea" v-show='random'  @click="changeTab(i)" v-for="(T,i) in tab">
             <!-- :class="{active:T.isActive}" 点击样式 -->
               <a  href="#"    >
                 <i :class="'icon '+T.icon"></i>
                 {{T.name}}
-              <i @click='closeClose' v-if='i !== 0' class="icon iconfont icon-close "></i>
+              <i  @click='closeClose(T,i)' v-if='i !== 0' class="icon iconfont icon-close "></i>
 
               </a>
           </li>
 
-    		</ul>
+        </ul>
       </div>
-  		<div class='right_btn'>
-  			<a href='#'>
+      <div class='right_btn'>
+        <a href='#'>
                 <i class="icon iconfont icon-home"></i>
-  			</a>
-  			<a href='#' @click='changeData()'>
+        </a>
+        <a href='#' @click='changeData()'>
                 <i class="icon iconfont icon-refresh1"></i>
-  			</a>
-  			<a href='#'>
+        </a>
+        <a href='#'>
                 <i class="icon iconfont icon-close"></i>
-  			</a>
-  			<a href='#'  class="win-fullscreen" @click='changeView()'>
+        </a>
+        <a href='#'  class="win-fullscreen" @click='changeView()'>
                 <i class="icon iconfont icon-desktop"></i>
-  			</a>
-  		</div>
+        </a>
+      </div>
         <a href="#" class="moveClick click_next" @click='click_next()'>
             <i class="icon iconfont icon-next"></i>
       </a>
-  	</nav>
-    <section class="test_section_content">
-      <div :is='test_component_name'></div>
+    </nav>
+    <section :is='test_component_name' class="test_section_content">
+      <!-- <div ></div> -->
     </section>
   </section>
 </template>
 <script>
   import sourceManage from '../qiao/sourceManage'
+  import chat from '../qiao/chat'
   import system from '../systemhomes/systemsection'
   import UserManagement from '../../pages/InstantChat/UserManagement';
   import DepartmentManagement from '../../pages/InstantChat/DepartmentManagement'
@@ -56,10 +57,10 @@
       name: 'testSection',
       data(){
         return{
-            isClick:true,
+            random:true,
             tabsName: [],  
-          isFull:true,
-           tabsName: [],
+            isFull:true,
+            tabsName: [],
             active: false ,
             isActive: true ,
             ulLeftNum : 0,
@@ -78,12 +79,14 @@
         Pie,
         Histgram,
         BrokenLine,
-        TestTest
+        TestTest,
+        chat
       },
       computed:mapGetters({
             tab:"getTab"
       }),
       updated(){
+        this.changeTab()
       },
       beforeupdated(){
 
@@ -92,8 +95,11 @@
         // this.tabsName = this.$store.state.counter.tabData
       },
       methods:{
-        closeClose(){
-
+        closeClose(t,i){
+          // console.log($($('.Sea')[i]))
+          $($('.Sea')[i]).css('display','none')
+          // $('.Sea')[i].vShow = !this.random
+          // this.random = !this.random
         },
         closeTab(i){
           // console.log(i,$($('.left_nav .icon-close').parent().parent()[i]))
@@ -136,12 +142,14 @@
           }else if(i === 3){
             this.test_component_name = 'UserManagement'
           }else if(i === 4){
-            this.test_component_name = "BrokenLine"
+            this.test_component_name = "chat"
           }else if(i === 5){
-            this.test_component_name = "Histgram"
+            this.test_component_name = "BrokenLine"
           }else if(i === 6){
-            this.test_component_name = "Pie"
+            this.test_component_name = "Histgram"
           }else if(i === 7){
+            this.test_component_name = "Pie"
+          }else if(i === 8){
             this.test_component_name = "Radar"
           }
         },
@@ -165,45 +173,45 @@
             });
         },
         // 全屏
-  	    changeView(){
-  	    	 if(this.isFull){
+        changeView(){
+           if(this.isFull){
               this.exitFull()
               this.isFull = false;
            }else{
               this.requestFullScreen(document.documentElement)
               this.isFull = true;
            }
-  	    },
-      	// 进入全屏
-  	    requestFullScreen(element) {
-	        var requestMethod = element.requestFullScreen || //W3C
-	        element.webkitRequestFullScreen ||    //Chrome等
-	        element.mozRequestFullScreen || //FireFox
-	        element.msRequestFullScreen; //IE11
-	        if (requestMethod) {
-	            requestMethod.call(element);
-	        }else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
-	            var wscript = new ActiveXObject("WScript.Shell");
-	            if (wscript !== null) {
-	                wscript.SendKeys("{F11}");
-	            }
-	        }
-  	    },
-  	    //退出全屏
+        },
+        // 进入全屏
+        requestFullScreen(element) {
+          var requestMethod = element.requestFullScreen || //W3C
+          element.webkitRequestFullScreen ||    //Chrome等
+          element.mozRequestFullScreen || //FireFox
+          element.msRequestFullScreen; //IE11
+          if (requestMethod) {
+              requestMethod.call(element);
+          }else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+              var wscript = new ActiveXObject("WScript.Shell");
+              if (wscript !== null) {
+                  wscript.SendKeys("{F11}");
+              }
+          }
+        },
+        //退出全屏
         exitFull() {
-	        var exitMethod = document.exitFullscreen || //W3C
-	        document.mozCancelFullScreen ||    //Chrome等
-	        document.webkitExitFullscreen || //FireFox
-	        document.webkitExitFullscreen; //IE11
-	        if (exitMethod) {
-	            exitMethod.call(document);
-	        }else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
-	            var wscript = new ActiveXObject("WScript.Shell");
-	            if (wscript !== null) {
-	                wscript.SendKeys("{F11}");
-	            }
-	        }
-    	 }
+          var exitMethod = document.exitFullscreen || //W3C
+          document.mozCancelFullScreen ||    //Chrome等
+          document.webkitExitFullscreen || //FireFox
+          document.webkitExitFullscreen; //IE11
+          if (exitMethod) {
+              exitMethod.call(document);
+          }else if (typeof window.ActiveXObject !== "undefined") {//for Internet Explorer
+              var wscript = new ActiveXObject("WScript.Shell");
+              if (wscript !== null) {
+                  wscript.SendKeys("{F11}");
+              }
+          }
+       }
       },
       watch:{
           tabsName: function (x,y){
